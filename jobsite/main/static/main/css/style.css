@@ -60,12 +60,12 @@ a:hover{
 /* Header
 ---------------------------------------- */
 .header-wrap {
-	background:url(../images/header-tail.gif) 0 0 repeat-x #1a1d18;
+	background:url(images/header-tail.gif) 0 0 repeat-x #1a1d18;
 	height:363px;
 	overflow:hidden;
 	}
 	.header-wrap > header {
-		background:url(../images/header-bg.jpg) no-repeat 50% 0;
+		background:url(images/header-bg.jpg) no-repeat 50% 0;
 		height:327px;
 		}
 	
@@ -78,7 +78,7 @@ a:hover{
 	top:58px;
 	width:241px;
 	height:56px;
-	background:url(../images/logo.png) no-repeat 0 0;
+	background:url(images/logo.png) no-repeat 0 0;
 	text-indent:-9999em;
 	}
 	.header-wrap h1 span,
@@ -106,7 +106,7 @@ a:hover{
 	left:0;
 	top:314px;
 	width:100%;
-	background:url(../images/header-nav-bg.gif) 0 0 repeat-x;
+	background:url(images/header-nav-bg.gif) 0 0 repeat-x;
 	border-radius:6px;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
@@ -144,7 +144,7 @@ aside .indent {
 aside h3 {
 	font-size:13px;
 	color:#fff;
-	background:url(../images/title-bg.gif) 0 0 repeat-x;
+	background:url(images/title-bg.gif) 0 0 repeat-x;
 	height:36px;
 	line-height:36px;
 	position:absolute;
@@ -170,7 +170,7 @@ aside h3 {
 	}
 	
 	article h3 {
-		background:url(../images/line2.gif) 0 100% repeat-x;
+		background:url(images/line2.gif) 0 100% repeat-x;
 		font-size:18px;
 		font-weight:normal;
 		color:#fff;
@@ -182,7 +182,7 @@ aside h3 {
 
 /* Lists */
 ul.list1 li {
-	background:url(../images/arrow2.gif) no-repeat 0 3px;
+	background:url(images/arrow2.gif) no-repeat 0 3px;
 	padding:0 0 10px 22px;
 	vertical-align:top;
 	position:relative;
@@ -202,7 +202,7 @@ article {
 	overflow:hidden;
 	}
 	article > header {
-		background:url(../images/title-bg1.gif) 0 0 repeat-x #2b2d27;
+		background:url(images/title-bg1.gif) 0 0 repeat-x #2b2d27;
 		border:1px solid #44463f;
 		padding:15px 20px 15px 20px;
 		position:relative;
@@ -263,12 +263,12 @@ article .content {
 
 /* Menu */
 ul.menu li {
-	background:url(../images/line1.gif) 0 100% repeat-x;
+	background:url(images/line1.gif) 0 100% repeat-x;
 	padding:0 0 8px 0;
 	margin-bottom:4px;
 	}
 	ul.menu li a {
-		background:url(../images/arrow1.png) no-repeat 0 0px;
+		background:url(images/arrow1.png) no-repeat 0 0px;
 		padding:0 0 0 23px;
 		color:#efffd7;
 		text-transform:uppercase;
@@ -327,7 +327,7 @@ ul.menu li.last {
 /* Buttons */
 .button { 
 	float:right;
-	background:url(../images/button-bg.gif) 0 0 repeat-x;
+	background:url(images/button-bg.gif) 0 0 repeat-x;
 	color:#b6b3b2;
 	text-transform:uppercase;
 	font-size:10px;
@@ -363,7 +363,7 @@ ul.menu li.last {
 
 /* Boxes */
 .box {
-	background:url(../images/splash.png) no-repeat 0 0 #2d8a04;
+	background:url(images/splash.png) no-repeat 0 0 #2d8a04;
 	padding:28px 26px 30px 26px;
 	border-radius:7px;
 	-moz-border-radius:7px;
@@ -374,7 +374,7 @@ ul.menu li.last {
 	}
 
 .box1 {
-	background:url(../images/splash.png) no-repeat 0 0 #10120d;
+	background:url(images/splash.png) no-repeat 0 0 #10120d;
 	padding:55px 26px 30px 26px;
 	border-radius:0 0 7px 7px;
 	-moz-border-radius:0 0 7px 7px;
@@ -388,7 +388,7 @@ ul.menu li.last {
 	}
 
 .box2 {
-	background:url(../images/box2-bg.gif) 0 0 repeat-x #2b2d27;
+	background:url(images/box2-bg.gif) 0 0 repeat-x #2b2d27;
 	padding:35px 20px 30px 20px;
 	border-radius:7px;
 	-moz-border-radius:7px;
@@ -509,7 +509,7 @@ input, select, textarea {
 		.search-form input[type=submit] {
 			width:21px;
 			height:20px;
-			background:url(../images/search-icon.gif) no-repeat 0 0;
+			background:url(images/search-icon.gif) no-repeat 0 0;
 			border:none;
 			margin-right:5px;
 			cursor:pointer;
@@ -543,7 +543,7 @@ input, select, textarea {
 			}
 		.login-form input[type=submit] {
 			float:right;
-			background:url(../images/submit-bg.gif) 0 0 repeat-x;
+			background:url(images/submit-bg.gif) 0 0 repeat-x;
 			font-size:11px;
 			color:#293a18;
 			font-weight:bold;
@@ -594,7 +594,7 @@ input, select, textarea {
 		}
 	.poll-form input[type=submit] {
 			float:right;
-			background:url(../images/submit-bg.gif) 0 0 repeat-x;
+			background:url(images/submit-bg.gif) 0 0 repeat-x;
 			font-size:11px;
 			color:#293a18;
 			font-weight:bold;
