@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Django Talents{% endblock title %}</title> 
+        {% block css %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}main/css/grid.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}main/css/reset.css" />
+        <!--[if gt IE 7]><!-->
+		<link rel="stylesheet" href="{{ STATIC_URL }}main/css/style.css"/>
+		<!--<![endif]-->
+        <!--[if lt IE 8]><link rel=stylesheet href="css/ie.css"><![endif]-->
+        {% endblock css %}
+        {% block javascript %}
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="js/html5.js"></script>
+        <![endif]-->
+        {% endblock javascript %}
+    </head>
+    <body>{% block body %}{% endblock body %}</body>
+</html>
