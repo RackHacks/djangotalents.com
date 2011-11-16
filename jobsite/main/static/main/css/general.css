@@ -7,7 +7,7 @@ form input[type="text"] {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     border-radius: 8px;
-	margin:  1px 10px 10px 10px;
+    margin:  1px 10px 10px 10px;
 }
 form textarea {
     resize: vertical;
@@ -16,7 +16,7 @@ form textarea {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     border-radius: 8px;
-	margin:  5px 10px 10px 10px;
+    margin:  5px 10px 10px 10px;
 }
 form label {
     font-size: 20px;
