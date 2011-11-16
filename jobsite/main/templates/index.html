@@ -2,26 +2,32 @@
 {% block body %}
 <div class="header-wrap">
     <header>
+        {% block header %}
         <div class="container_24">
         <h1><span></span>Businex</h1>
         <div class="slogan"><img src="{{ STATIC_URL }}main/css/images/slogan.png" alt=""></div>
         <nav>
             <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index-1.html">Talent</a></li>
-            <li><a href="index-2.html">Talent Seekers</a></li>
-            <li><a href="index.html">Sign up</a></li>
-            <li><a href="index-3.html">Contact</a></li>
-            <li><a href="index-4.html">About us</a></li>
+            {% block menu %}
+            <li><a href="{% url index %}">Home</a></li>
+            <li><a href="{% url talent %}">Talent</a></li>
+            <li><a href="{% url seekers %}">Talent Seekers</a></li>
+            <li><a href="{% url signup %}">Sign up</a></li>
+            <li><a href="{% url contact %}">Contact</a></li>
+            <li><a href="{% url about %}">About us</a></li>
+            {% endblock menu %}
           </ul>
         </nav>
       </div>
+    {% endblock header %}
     </header>
   </div>
   <section id="content">
     <div class="container_24">
         <div class="wrapper">
           <aside class="grid_7">
+            {% block content %}
+            {% block left-menu %}
             <label>Welcome, user</label>
             <div class="indent">
             <div class="box">
@@ -69,9 +75,11 @@
               </form>
             </div>
           </div>
+        {% endblock left-menu %}
         </aside>
           <div class="grid_17">
             <div class="inside">
+            {% block right-content %}
             <article>
               <header>
                 <h2>Human talent is the most important!</h2>
@@ -84,7 +92,6 @@
                     and to compete they have to have the highest skills possible.<br /><br />
                     <h4>In Django Talents are the best programmers in Django, the most powerfull framework to develop web aplications!</h4>
                 </blockquote>
-
               </div>
             </article>
             <article>
@@ -122,13 +129,17 @@
             </article>
           </div>
         </div>
+        {% endblock right-content %}
+        {% endblock content %}
         </div>
     </div>
   </section>
   <div class="footer-wrap">
     <footer class="container_24">
+        {% block footer %}
         Copyright &copy; 2011 djangotalents.com<br />
         Powered by <a href="http://www.codenga.com" target="_blank" rel="external">Codenga</a>
+        {% endblock footer %}
     </footer>
   </div>
  {% endblock body %}
