@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django_countries import CountryField
 
 
 JOB_CHOICES = (
@@ -11,9 +12,22 @@ JOB_CHOICES = (
 
 class UserProfile(models.Model):
     user = models.ForeignKey('auth.User', related_name='+')
-    #country
     bio = models.TextField()
     looking_for_a_job = models.CharField(max_length=1, choices=JOB_CHOICES)
+    country = CountryField()
+    location = models.CharField(max_length=150)
+    github = models.CharField(max_length=50)
+    facebook = models.CharField(max_length=50, null=True, blank=True)
+    twiiter = models.CharField(max_length=50, null=True, blank=True)
+    gtalk = models.CharField(max_length=50, null=True, blank=True)
+    skype = models.CharField(max_length=50, null=True, blank=True)
+    msn = models.EmailField(null=True, blank=True)
+    yahoo = models.EmailField(null=True, blank=True)
+    aim = models.CharField(max_length=150, null=True, blank=True)
+    jabber = models.CharField(max_length=150, null=True, blank=True)
+    irc = models.CharField(max_length=150, null=True, blank=True)
+    blog = models.URLField(null=True, blank=True)
+    website = models.URLField(null=True, blank=True)
 
     def __unicode__(self):
         return self.get_full_name()
@@ -30,7 +44,7 @@ class UserProfile(models.Model):
         return self.user.get_full_name()
 
 class Link(models.Model):
-    user = models.ForeignKey(UserProfile, related_name='links')
+    user = models.ForeignKey(UserProfile, related_name='portfolio')
     name = models.CharField(max_length=50)
     url = models.URLField()
 
