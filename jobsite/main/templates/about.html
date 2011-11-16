@@ -1,13 +1,32 @@
 {% extends 'index.html' %}
 {% block right-content %}
 <article>
-  <header>
-    <h2>Know who we are!</h2>
-  </header>
-  <div class="content">
-    <blockquote>
-        Information about DjangoTalents and Codenga
-    </blockquote>
-  </div>
+    <header>
+        <h2>Know who we are!</h2>
+    </header>
+    <div class="content">
+        <blockquote>
+            We are a talented group of Django programmers!<br />
+            We think that Django is the best tool for developing web applications,
+            and to use the best tool you need the best talent, it's this idea that 
+            comes Django Talents, the place where the most talented programmes in Django are.
+        </blockquote>
+    </div>
+    <br /><br />
+    <header>
+        <h2>Who is behind?</h2>
+    </header>
+    <div class="content">
+        <blockquote>
+            <a href="http://www.codenga.com" target="_blank" rel="external">
+                <img id="codenga-logo" src="{{ STATIC_URL }}main/css/images/codenga-logo.png" />
+            </a><br />
+             Behind Django Talents are Codenga a companie made of a tight 
+             group of passionate developers.
+             <a href="http://www.codenga.com" target="_blank" rel="external">
+                 Know more about Codenga...
+             </a>
+        </blockquote>
+    </div>
 </article>
 {% endblock right-content %}
