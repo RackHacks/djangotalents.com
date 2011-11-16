@@ -1,13 +1,23 @@
 {% extends 'index.html' %}
 {% block right-content %}
 <article>
-  <header>
-    <h2>We want to hear from you</h2>
-  </header>
-  <div class="content">
-    <blockquote>
-        Information about contact
-    </blockquote>
-  </div>
+    <header>
+      <h2>We want to hear from you</h2>
+    </header>
+    <div class="content">
+        <blockquote>
+            <h4>You can give us some feedback or tell us your idea to improve the community!</h4><br />
+            {% if success %}
+            <h4  class="alert">We received an email, you will have a response in a few hours, thanks for contact us!</h4>
+            {% endif %}
+            <form action="{% url contact %}" method="post">{% csrf_token %}
+                {% for field in form %}
+                <label>{{ field.label }}:</label>{{ field.errors }}<br />
+                {{ field }}<br />
+                {% endfor %}
+                <input type="submit" value="Send" name="send-contact-form" />
+            </form>
+        </blockquote>
+    </div>
 </article>
 {% endblock right-content %}
