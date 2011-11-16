@@ -28,6 +28,7 @@ html, body { height:100%;}
 a {
 	color:#ba450c; 
 	outline:none;
+	text-decoration:none;
 	}
 a:hover{
 	text-decoration:none;
@@ -111,27 +112,32 @@ a:hover{
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	behavior:url(js/PIE.htc);
+	text-decoration: none !important;
 	}
 	.header-wrap nav ul {
 		padding:13px 0 18px 0;
+		text-decoration: none !important;
 		}
 		.header-wrap nav ul li {
 			border-left:1px solid #a1b79c;
 			padding:0 16px 0 19px;
 			display:inline;
+			text-decoration: none !important;
 			}
 		.header-wrap nav ul li:first-child {
 			border-left:none;
+			text-decoration: none !important;
 			}
 			.header-wrap nav ul li a {
 				font-size:14px;
 				color:#a1b79c;
-				text-decoration:none;
+				text-decoration: none !important;
 				}
 			.header-wrap nav ul li a:hover,
 			.header-wrap nav ul li a.current{
 				border-bottom:1px solid #fff;
 				color:#fff;
+				text-decoration: none;
 				}
 
 
@@ -243,7 +249,7 @@ article {
 					text-decoration:none;
 					}
 				article > header .post-meta .author a:hover {
-					text-decoration:underline;
+					text-decoration:none;
 					}
 			
 			article > header .post-meta .date {
@@ -277,7 +283,7 @@ ul.menu li {
 		text-decoration:none;
 		}
 	ul.menu li a:hover {
-		text-decoration:underline;
+		text-decoration:none;
 		}
 ul.menu li.last {
 	background:none;
@@ -310,7 +316,7 @@ ul.menu li.last {
 	text-decoration:none;
 	}
 .link1:hover { 
-	text-decoration:underline;
+	text-decoration:none;
 	}
 	.link1 em {
 		display:block;
