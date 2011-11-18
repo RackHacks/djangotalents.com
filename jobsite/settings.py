@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'main',
     'django_countries',
+    'registration',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -157,6 +158,7 @@ if os.environ.get('SENDGRID_USERNAME'):
     EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = 'noreply@djangotalents.com'
 
 try:
     import gunicorn
@@ -164,3 +166,4 @@ try:
 except ImportError:
     pass
 
+ACCOUNT_ACTIVATION_DAYS = 7
