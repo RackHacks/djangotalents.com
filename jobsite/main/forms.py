@@ -18,13 +18,6 @@ class UserForm(UserCreationForm):
         fields = ('email', 'password1', 'password2')
         exclude = ('username',)
 
-    def save(self, commit=True):
-        user = super(UserForm, self).save(commit=False)
-        user.username = self.cleaned_data['email']
-        if commit:
-            user.save()
-        return user
-
 class SignupForm(forms.ModelForm):
     class Meta:
         model = UserProfile
