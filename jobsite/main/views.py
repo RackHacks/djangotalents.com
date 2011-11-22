@@ -43,9 +43,7 @@ def signup(request, backend, success_url=None, extra_context=None):
         signup_form = SignupForm(request.POST)
 
         if user_form.is_valid() and signup_form.is_valid():
-            cleaned_data = user_form.cleaned_data
-            cleaned_data['username'] = cleaned_data['email']
-            new_user = backend.register(request, **cleaned_data)
+            new_user = backend.register(request, **user_form.cleaned_data)
             profile = signup_form.save(commit=False)
             profile.user = new_user
             profile.save()
@@ -74,3 +72,6 @@ def seekers(request):
 
 def talent(request):
     return render_to_response('talent.html', RequestContext(request))
+
+def terms_of_service(request):
+    pass

@@ -11,13 +11,9 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea, max_length=1000)
 
 class UserForm(UserCreationForm):
-    def __init__(self, *args, **kwargs):
-        super(UserForm, self).__init__(*args, **kwargs)
-        del self.fields['username']
-
     class Meta:
         model = User
-        fields = ('email', 'password1', 'password2')
+        fields = ('username', 'email', 'password1', 'password2')
 
 class SignupForm(forms.ModelForm):
     class Meta:

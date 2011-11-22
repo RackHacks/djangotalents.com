@@ -9,4 +9,5 @@ urlpatterns = patterns('main.views',
         name='signup'),
     url(r'^seekers/?$', 'seekers', name='seekers'),
     url(r'^talent/?$', 'talent', name='talent'),
+    url(r'^terms_of_service/$', 'terms_of_service', name='terms'),
 )

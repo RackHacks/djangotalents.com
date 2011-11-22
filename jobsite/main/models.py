@@ -9,6 +9,9 @@ JOB_CHOICES = (
     (u'B', u'Fulltime/Freelancer'),
 )
 
+User._meta.get_field('email')._unique = True
+User._meta.get_field('email')._required = True
+
 class UserProfile(models.Model):
     user = models.ForeignKey('auth.User', related_name='+')
     bio = models.TextField()
