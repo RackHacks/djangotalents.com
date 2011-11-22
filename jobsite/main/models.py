@@ -17,7 +17,7 @@ class UserProfile(models.Model):
     location = models.CharField(max_length=150)
     github = models.CharField(max_length=50, null=True, blank=True)
     facebook = models.CharField(max_length=50, null=True, blank=True)
-    twiiter = models.CharField(max_length=50, null=True, blank=True)
+    twitter = models.CharField(max_length=50, null=True, blank=True)
     gtalk = models.CharField(max_length=50, null=True, blank=True)
     skype = models.CharField(max_length=50, null=True, blank=True)
     msn = models.EmailField(null=True, blank=True)
