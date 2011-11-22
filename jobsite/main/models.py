@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django_countries import CountryField
-
+from countries.models import Country
 
 JOB_CHOICES = (
     (u'N', u'Not right now'),
@@ -14,7 +13,7 @@ class UserProfile(models.Model):
     user = models.ForeignKey('auth.User', related_name='+')
     bio = models.TextField()
     looking_for_a_job = models.CharField(max_length=1, choices=JOB_CHOICES)
-    country = CountryField()
+    country = models.ForeignKey(Country)
     location = models.CharField(max_length=150)
     github = models.CharField(max_length=50)
     facebook = models.CharField(max_length=50, null=True, blank=True)

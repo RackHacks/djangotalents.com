@@ -1,6 +1,8 @@
 from django import forms
+from django.forms import Select
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from main.country_choices import COUNTRIES as COUNTRY_CHOICES
 from main.models import UserProfile
 
 class ContactForm(forms.Form):
@@ -16,9 +18,11 @@ class UserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('email', 'password1', 'password2')
-        exclude = ('username',)
 
 class SignupForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('country',)
+        widgets = {
+            'country': Select(choices=COUNTRY_CHOICES)
+        }

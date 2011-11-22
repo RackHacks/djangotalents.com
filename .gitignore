@@ -6,3 +6,4 @@ lib/
 bin/
 include/
 .tmp*
+*.swp
