@@ -1,6 +1,9 @@
 #codenga-logo {
     margin: 10px 0 20px 130px;
 }
+.country:hover {
+    text-decoration: underline;
+}
 form input[type="text"],
 form input[type="password"],
 form select {

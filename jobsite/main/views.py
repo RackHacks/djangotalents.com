@@ -1,8 +1,9 @@
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from django.core.mail import send_mail
 from registration.backends import get_backend
+from countries.models import Country
 
 from main.forms import ContactForm, UserForm, SignupForm
 from main.models import UserProfile
@@ -75,7 +76,15 @@ def seekers(request):
     return render_to_response('seekers.html', RequestContext(request))
 
 def talents(request):
-    countries = [unicode(p.country.name) for p in UserProfile.objects.all()]
+    code_countries = [p.country.numcode for p in UserProfile.objects.all()]
+    countries = Country.objects.filter(numcode__in=code_countries)
     return render_to_response('talents.html', RequestContext(request, {
         'countries': countries,
+    }))
+
+def talents_by_country(request, country):
+    country = get_object_or_404(Country, name=country.upper)
+    profiles = UserProfile.objects.filter(country=country)
+    return render_to_response('talents_by_country.html', RequestContext(request, {
+        'profiles': profiles,
     }))

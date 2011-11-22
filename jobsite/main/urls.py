@@ -9,4 +9,6 @@ urlpatterns = patterns('main.views',
         name='signup'),
     url(r'^seekers/?$', 'seekers', name='seekers'),
     url(r'^talents/?$', 'talents', name='talents'),
+    url(r'^talents/(?P<country>[\w\-\ ]+)/?$', 'talents_by_country', name='talents_by_country'),
+    
 )
