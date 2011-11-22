@@ -2,12 +2,15 @@
 {% block right-content %}
 <article>
   <header>
-    <h2>The best programmers in Django!</h2>
+   {% block content-title %} <h2> Talented people in {{ country }} </h2>{% endblock content-title%}
   </header>
   <div class="content">
     <blockquote>
         {% for profile in profiles %}
-            {{ profile.user }}
+            <div class="profile-box">
+            <a href="{% url talent profile.user.username %}"><h3>{{ profile.user.username }}</h3></a>
+            {{ profile.bio|truncatewords_html:20}}
+            </div>
         {% endfor %}
     </blockquote>
   </div>

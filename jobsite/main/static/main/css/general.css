@@ -1,8 +1,31 @@
 #codenga-logo {
     margin: 10px 0 20px 130px;
 }
-.country:hover {
+.underline:hover {
     text-decoration: underline;
+}
+.profile-box {
+    background: url(images/box2-bg.gif) 0 0 repeat-x #2b2d27;
+    padding: 10px 20px 10px 20px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    position: relative;
+    behavior: url(js/PIE.htc);
+    margin: 0 0 21px 0;
+    font-size: 11px;
+    border: 1px solid #44463f;
+    color: #8b9082;
+}
+.social {
+    float: left;
+	width: 270px;
+	padding-bottom: 20px;
+}
+#social-box {
+	width: 540px;
+}
+.social-user {
 }
 form input[type="text"],
 form input[type="password"],

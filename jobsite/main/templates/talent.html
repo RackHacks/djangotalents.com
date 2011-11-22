@@ -2,11 +2,95 @@
 {% block right-content %}
 <article>
   <header>
-    <h2>The best programmers in Django!</h2>
+    {% block content-title %} <h2> {{ profile.user.first_name }} {{ profile.user.last_name }} </h2>{% endblock content-title%}
   </header>
   <div class="content">
     <blockquote>
-        Information about Talents
+        <h3>{{ profile.bio }}</h3>
+        <div id="social-box">
+        {% if profile.github %}
+             <div class="social">
+                <a rel="external" target="_blank" href="http://github.com/{{ profile.github }}">
+                   <img src="{{ STATIC_URL }}main/css/images/github.png">
+                </a>
+				<label class="social-user">{{ profile.github }}</label>
+             </div>
+        {% endif %}
+        {% if profile.twiiter %}
+            <div class="social">
+                <a rel="external" target="_blank" href="http://twitter.com/{{ profile.twiiter }}">
+                   <img src="{{ STATIC_URL }}main/css/images/twitter.png">
+                </a>
+                <label class="social-user">{{ profile.twiiter }}</label>
+            </div>
+        {% endif %}
+        {% if profile.facebook %}
+             <div class="social">
+                 <a rel="external" target="_blank" href="http://facebook.com/{{ profile.facebook }}">
+                     <img src="{{ STATIC_URL }}main/css/images/facebook.png">
+                 </a>
+                <label class="social-user">{{ profile.facebook }}</label>
+             </div>
+        {% endif %}
+        {% if profile.gtalk %}
+             <div class="social">
+                  <img src="{{ STATIC_URL }}main/css/images/gtalk.png">
+				  <label class="social-user">{{ profile.gtalk }}</label>
+             </div>
+        {% endif %}
+        {% if profile.skype %}
+            <div class="social">
+                <img src="{{ STATIC_URL }}main/css/images/skype.png">
+				<label class="social-user">{{ profile.skype }}</label>
+            </div>
+        {% endif %}
+        {% if profile.msn %}
+            <div class="social">
+                 <img src="{{ STATIC_URL }}main/css/images/msn.png">
+				 <label class="social-user">{{ profile.msn }}</label>
+            </div>
+        {% endif %}
+        {% if profile.yahoo %}
+            <div class="social">
+                <img src="{{ STATIC_URL }}main/css/images/yahoo.png">
+				<label class="social-user">{{ profile.yahoo }}</label>
+            </div>
+        {% endif %}
+        {% if profile.aim %}
+             <div class="social">
+                 <img src="{{ STATIC_URL }}main/css/images/aim.png">
+				 <label class="social-user">{{ profile.aim }}</label>
+              </div>
+        {% endif %}
+        {% if profile.jabber %}
+             <div class="social">
+                  <img src="{{ STATIC_URL }}main/css/images/jabber.png">
+				  <label class="social-user">{{ profile.jabber }}</label>
+             </div>
+        {% endif %}
+        {% if profile.irc %}
+             <div class="social">
+                 <img src="{{ STATIC_URL }}main/css/images/irc.png">
+				 <label class="social-user">{{ profile.irc }}</label>
+            </div>
+        {% endif %}
+        {% if profile.website %}
+             <div class="social">
+                 <a rel="external" target="_blank" href="{{ profile.website }}">
+                     <img src="{{ STATIC_URL }}main/css/images/website.png">
+					 <label class="social-user">{{ profile.website }}</label>
+                </a>
+            </div>
+        {% endif %}
+        {% if profile.blog %}
+            <div class="social">
+                 <a rel="external" target="_blank" href="{{ profile.blog }}">
+                    <img src="{{ STATIC_URL }}main/css/images/blog.png">
+					<label class="social-user">{{ profile.blog }}</label>
+                </a>
+            </div>
+        {% endif %}
+        </div>
     </blockquote>
   </div>
 </article>

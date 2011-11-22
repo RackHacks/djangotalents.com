@@ -87,4 +87,11 @@ def talents_by_country(request, country):
     profiles = UserProfile.objects.filter(country=country)
     return render_to_response('talents_by_country.html', RequestContext(request, {
         'profiles': profiles,
+        'country': country.name.capitalize
+    }))
+
+def talent(request, username):
+    profile = get_object_or_404(UserProfile, user__username=username)
+    return render_to_response('talent.html', RequestContext(request, {
+        'profile': profile,
     }))

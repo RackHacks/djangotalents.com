@@ -10,5 +10,6 @@ urlpatterns = patterns('main.views',
     url(r'^seekers/?$', 'seekers', name='seekers'),
     url(r'^talents/?$', 'talents', name='talents'),
     url(r'^talents/(?P<country>[\w\-\ ]+)/?$', 'talents_by_country', name='talents_by_country'),
+    url(r'^talent/(?P<username>[\w\-\ ]+)/?$', 'talent', name='talent'),
     
 )

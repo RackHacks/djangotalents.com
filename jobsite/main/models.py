@@ -15,7 +15,7 @@ class UserProfile(models.Model):
     looking_for_a_job = models.CharField(max_length=1, choices=JOB_CHOICES)
     country = models.ForeignKey(Country, related_name='users')
     location = models.CharField(max_length=150)
-    github = models.CharField(max_length=50)
+    github = models.CharField(max_length=50, null=True, blank=True)
     facebook = models.CharField(max_length=50, null=True, blank=True)
     twiiter = models.CharField(max_length=50, null=True, blank=True)
     gtalk = models.CharField(max_length=50, null=True, blank=True)
