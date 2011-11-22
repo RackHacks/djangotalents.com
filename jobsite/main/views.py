@@ -46,7 +46,6 @@ def signup(request, backend, success_url=None, extra_context=None):
             cleaned_data = user_form.cleaned_data
             cleaned_data['username'] = cleaned_data['email']
             new_user = backend.register(request, **cleaned_data)
-            signup_form = SignupForm(request.POST)
             profile = signup_form.save(commit=False)
             profile.user = new_user
             profile.save()

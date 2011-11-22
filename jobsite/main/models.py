@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.db import models
 from countries.models import Country
 
-
 JOB_CHOICES = (
     (u'N', u'Not right now'),
     (u'F', u'Freelancer'),
