@@ -333,7 +333,7 @@
    "is_active": true, 
    "is_superuser": true, 
    "is_staff": true, 
-   "last_login": "2011-11-22 12:03:16", 
+   "last_login": "2011-11-22 12:55:56", 
    "groups": [], 
    "user_permissions": [], 
    "password": "sha1$ca217$7522f01e5433f3e3162e5f660a13a159608a6c1b", 
@@ -342,93 +342,11 @@
   }
  }, 
  {
-  "pk": 2, 
-  "model": "auth.user", 
-  "fields": {
-   "username": "orozcomgera@gmail.com", 
-   "first_name": "", 
-   "last_name": "", 
-   "is_active": false, 
-   "is_superuser": false, 
-   "is_staff": false, 
-   "last_login": "2011-11-22 12:40:56", 
-   "groups": [], 
-   "user_permissions": [], 
-   "password": "sha1$6e053$194dec2732585f8716df8544294afb94b2030aea", 
-   "email": "orozcomgera@gmail.com", 
-   "date_joined": "2011-11-22 12:40:56"
-  }
- }, 
- {
-  "pk": 3, 
-  "model": "auth.user", 
-  "fields": {
-   "username": "gerardo.orozco.mosqueda@gmail.com", 
-   "first_name": "", 
-   "last_name": "", 
-   "is_active": true, 
-   "is_superuser": false, 
-   "is_staff": false, 
-   "last_login": "2011-11-22 12:45:37", 
-   "groups": [], 
-   "user_permissions": [], 
-   "password": "sha1$76d9a$90d79033eea482beaf9859f68c4182ed1cab904d", 
-   "email": "gerardo.orozco.mosqueda@gmail.com", 
-   "date_joined": "2011-11-22 12:45:37"
-  }
- }, 
- {
   "pk": 1, 
   "model": "sites.site", 
   "fields": {
    "domain": "localhost:8000", 
    "name": "localhost:8000"
-  }
- }, 
- {
-  "pk": 1, 
-  "model": "main.userprofile", 
-  "fields": {
-   "website": null, 
-   "bio": "", 
-   "looking_for_a_job": "", 
-   "github": "", 
-   "twiiter": null, 
-   "country": "MX", 
-   "yahoo": null, 
-   "blog": null, 
-   "gtalk": null, 
-   "msn": null, 
-   "facebook": null, 
-   "location": "", 
-   "aim": null, 
-   "skype": null, 
-   "irc": null, 
-   "jabber": null, 
-   "user": 2
-  }
- }, 
- {
-  "pk": 2, 
-  "model": "main.userprofile", 
-  "fields": {
-   "website": null, 
-   "bio": "", 
-   "looking_for_a_job": "", 
-   "github": "", 
-   "twiiter": null, 
-   "country": "AF", 
-   "yahoo": null, 
-   "blog": null, 
-   "gtalk": null, 
-   "msn": null, 
-   "facebook": null, 
-   "location": "", 
-   "aim": null, 
-   "skype": null, 
-   "irc": null, 
-   "jabber": null, 
-   "user": 3
   }
  }, 
  {
@@ -2889,22 +2807,6 @@
    "iso3": "ZWE", 
    "printable_name": "Zimbabwe", 
    "name": "ZIMBABWE"
-  }
- }, 
- {
-  "pk": 1, 
-  "model": "registration.registrationprofile", 
-  "fields": {
-   "activation_key": "bffd0b201b5c785c909026d5b58095dda89f37bf", 
-   "user": 2
-  }
- }, 
- {
-  "pk": 2, 
-  "model": "registration.registrationprofile", 
-  "fields": {
-   "activation_key": "ALREADY_ACTIVATED", 
-   "user": 3
   }
  }
 ]
