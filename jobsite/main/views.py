@@ -3,7 +3,9 @@ from django.template import RequestContext
 from django.core.context_processors import csrf
 from django.core.mail import send_mail
 from registration.backends import get_backend
+
 from main.forms import ContactForm, UserForm, SignupForm
+from main.models import UserProfile
 
 
 def index(request):
@@ -73,5 +75,8 @@ def signup(request, backend, success_url=None, extra_context=None):
 def seekers(request):
     return render_to_response('seekers.html', RequestContext(request))
 
-def talent(request):
-    return render_to_response('talent.html', RequestContext(request))
+def talents(request):
+    countries = [unicode(p.country.name) for p in UserProfile.objects.all()]
+    return render_to_response('talents.html', RequestContext(request, {
+        'countries': countries,
+    }))

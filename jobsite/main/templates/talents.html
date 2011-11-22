@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block right-content %}
+<article>
+  <header>
+    <h2>The best programmers in Django!</h2>
+  </header>
+  <div class="content">
+    <blockquote>
+        {% for c in countries %}
+        <a href="#">{{ c }}</a><br />
+        {% endfor %}
+    </blockquote>
+  </div>
+</article>
+{% endblock right-content %}

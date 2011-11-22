@@ -8,5 +8,5 @@ urlpatterns = patterns('main.views',
         {'backend': 'registration.backends.default.DefaultBackend'},
         name='signup'),
     url(r'^seekers/?$', 'seekers', name='seekers'),
-    url(r'^talent/?$', 'talent', name='talent'),
+    url(r'^talents/?$', 'talents', name='talents'),
 )
