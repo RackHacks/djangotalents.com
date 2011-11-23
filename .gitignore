@@ -2,9 +2,10 @@ db.sqlite
 *.pyc
 .project
 .pydevproject
-./lib/
+lib/
 bin/
 include/
+man/
 .tmp*
 *.swp
 .settings

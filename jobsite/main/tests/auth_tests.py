@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.client import Client
 from sure import that
+from captcha.models import CaptchaStore
 from jobsite.lib.test_helpers import create_user
 from main.models import UserProfile
 
@@ -11,8 +12,15 @@ class AuthTest(TestCase):
     def setUp(self):
         self.client = Client()
         self.signup_url = '/accounts/register'
-        self.user = create_user(username='test', email='test@djangotalents.com',
-                                password='test')
+        self.user = create_user(
+            username='test',
+            email='test@djangotalents.com',
+            password='test'
+        )
+        CaptchaStore(
+            response='test-captcha-response',
+            hashkey='test-captcha-hashkey',
+        ).save()
 
     def test_correct_signup(self):
         data = {
@@ -20,7 +28,9 @@ class AuthTest(TestCase):
             'email': 'kurt@nirvanatest.com',
             'password1': 'kurtNirvana2',
             'password2': 'kurtNirvana2',
-            'country': 'MX'
+            'country': 'MX',
+            'captcha_0': 'test-captcha-hashkey',
+            'captcha_1': 'test-captcha-response',
         }
         response = self.client.post(self.signup_url, follow=True, data=data)
         assert that(response.redirect_chain).equals([('http://testserver/accounts/register/complete/', 302)])

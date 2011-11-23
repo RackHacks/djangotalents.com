@@ -62,10 +62,13 @@ def signup(request, backend, success_url=None, extra_context=None):
     for key, value in extra_context.items():
         context[key] = callable(value) and value() or value
 
-    return render_to_response('signup.html', {
-                                  'user_form': user_form,
-                                  'signup_form': signup_form
-                              }, context_instance=context)
+    return render_to_response(
+        'signup.html',
+        {
+            'user_form': user_form,
+            'signup_form': signup_form
+        },
+        context_instance=context)
 
 def seekers(request):
     return render_to_response('seekers.html', RequestContext(request))
