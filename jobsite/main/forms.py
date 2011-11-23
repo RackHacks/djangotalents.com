@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from main.country_choices import COUNTRIES as COUNTRY_CHOICES
 from main.models import UserProfile
 
+
 class ContactForm(forms.Form):
     subject = forms.CharField(max_length=100)
     sender = forms.EmailField()

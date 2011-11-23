@@ -168,3 +168,15 @@ except ImportError:
     pass
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
+try:
+    import unclebob
+    INSTALLED_APPS += ('unclebob',)
+    TEST_RUNNER = 'unclebob.runners.Nose'
+    UNCLEBOB_IGNORED_APPS = (
+        'countries',
+        'registration',
+    )
+    unclebob.take_care_of_my_tests()
+except ImportError:
+    pass
