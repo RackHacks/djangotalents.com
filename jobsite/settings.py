@@ -117,7 +117,6 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
@@ -125,7 +124,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'main',
-    'django_countries',
+    'countries',
+    'registration',
+    'captcha',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -151,6 +152,10 @@ LOGGING = {
     }
 }
 
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_arcs',)
+
+DEFAULT_FROM_EMAIL = 'noreply@djangotalents.com'
+
 if os.environ.get('SENDGRID_USERNAME'):
     EMAIL_HOST = 'smtp.sendgrid.net'
     EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME')
@@ -164,3 +169,16 @@ try:
 except ImportError:
     pass
 
+ACCOUNT_ACTIVATION_DAYS = 7
+
+try:
+    import unclebob
+    INSTALLED_APPS += ('unclebob',)
+    TEST_RUNNER = 'unclebob.runners.Nose'
+    UNCLEBOB_IGNORED_APPS = (
+        'countries',
+        'registration',
+    )
+    unclebob.take_care_of_my_tests()
+except ImportError:
+    pass
