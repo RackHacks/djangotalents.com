@@ -1,13 +1,17 @@
 #codenga-logo {
     margin: 10px 0 20px 130px;
 }
-form input[type="text"] {
+form input[type="text"],
+form input[type="password"],
+form select {
     height: 25px;
     width: 350px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     border-radius: 8px;
     margin:  1px 10px 10px 10px;
+    padding: 1px 5px;
+    font-size: 14px;
 }
 form textarea {
     resize: vertical;
@@ -17,9 +21,12 @@ form textarea {
     -webkit-border-radius: 8px;
     border-radius: 8px;
     margin:  5px 10px 10px 10px;
+    padding: 1px 5px;
+    font-size: 14px;
 }
 form label {
-    font-size: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 .errorlist {
     color: red;

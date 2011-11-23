@@ -1,13 +1,23 @@
 {% extends 'index.html' %}
+
 {% block right-content %}
 <article>
   <header>
     <h2>You are a Django Talent?</h2>
   </header>
   <div class="content">
-    <blockquote>
-        Information about signup
-    </blockquote>
+    <form method="post" action="{% url signup %}">
+    {% for field in user_form %}
+        {% csrf_token %}
+        <label for="id_{{ field.name }}">{{ field.label }}:</label>{{ field.errors }}<br />
+        {{ field }}<br />
+    {% endfor %}
+    {% for field in signup_form %}
+        <label for="id_{{ field.name }}">{{ field.label }}:</label>{{ field.errors }}<br />
+        {{ field }}<br />
+    {% endfor %}
+    <input type="submit" value="Send">
+    </form>
   </div>
 </article>
 {% endblock right-content %}
