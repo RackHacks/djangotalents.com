@@ -4,9 +4,9 @@ from countries.models import Country
 
 JOB_CHOICES = (
     (u'N', u'Not right now'),
-    (u'F', u'Freelancer'),
+    (u'F', u'Freelance'),
     (u'U', u'Fulltime'),
-    (u'B', u'Fulltime/Freelancer'),
+    (u'B', u'Fulltime/Freelance'),
 )
 
 class UserProfile(models.Model):

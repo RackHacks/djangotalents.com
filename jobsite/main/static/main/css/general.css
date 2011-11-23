@@ -19,14 +19,18 @@
 }
 .social {
     float: left;
-	width: 270px;
-	padding-bottom: 20px;
+    width: 270px;
+    padding-bottom: 20px;
 }
 #social-box {
-	width: 540px;
+    width: 540px;
 }
 .social-user {
-	color: white;
+    color: #ffffff;
+    font-size: 13px;
+}
+.red {
+    color:#ba450c;
 }
 form input[type="text"],
 form input[type="password"],

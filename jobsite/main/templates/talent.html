@@ -2,10 +2,15 @@
 {% block right-content %}
 <article>
   <header>
-    {% block content-title %} <h2> {{ profile.user.first_name }} {{ profile.user.last_name }} </h2>{% endblock content-title%}
+    {% block content-title %} <h2> {{ profile.user.first_name }} {{ profile.user.last_name }} - {{ profile.location }} </h2>{% endblock content-title%}
   </header>
   <div class="content">
     <blockquote>
+        {% if profile.looking_for_a_job != 'N' %}
+        <h2 class="red">I am looking for a {{ profile.get_looking_for_a_job_display.lower }} job</h2>
+        {% else %}
+        <h2 class="red">I am not looking a job</h2>
+        {% endif %}
         <h3>{{ profile.bio }}</h3>
         <div id="social-box">
         {% if profile.github %}
