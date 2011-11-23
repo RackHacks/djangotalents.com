@@ -2,7 +2,6 @@ from django import forms
 from django.forms import Select
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from main.country_choices import COUNTRIES as COUNTRY_CHOICES
 from main.models import UserProfile
 
 
@@ -20,6 +19,3 @@ class SignupForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('country',)
-        widgets = {
-            'country': Select(choices=COUNTRY_CHOICES)
-        }
