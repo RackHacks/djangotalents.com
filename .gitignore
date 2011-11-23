@@ -5,5 +5,7 @@ db.sqlite
 lib/
 bin/
 include/
+man/
 .tmp*
 *.swp
+.settings

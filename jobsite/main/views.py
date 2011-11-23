@@ -46,9 +46,7 @@ def signup(request, backend, success_url=None, extra_context=None):
         signup_form = SignupForm(request.POST)
 
         if user_form.is_valid() and signup_form.is_valid():
-            cleaned_data = user_form.cleaned_data
-            cleaned_data['username'] = cleaned_data['email']
-            new_user = backend.register(request, **cleaned_data)
+            new_user = backend.register(request, **user_form.cleaned_data)
             profile = signup_form.save(commit=False)
             profile.user = new_user
             profile.save()
@@ -67,10 +65,13 @@ def signup(request, backend, success_url=None, extra_context=None):
     for key, value in extra_context.items():
         context[key] = callable(value) and value() or value
 
-    return render_to_response('signup.html', {
-                                  'user_form': user_form,
-                                  'signup_form': signup_form
-                              }, context_instance=context)
+    return render_to_response(
+        'signup.html',
+        {
+            'user_form': user_form,
+            'signup_form': signup_form
+        },
+        context_instance=context)
 
 def seekers(request):
     return render_to_response('seekers.html', RequestContext(request))
@@ -95,3 +96,6 @@ def talent(request, username):
     return render_to_response('talent.html', RequestContext(request, {
         'profile': profile,
     }))
+
+def terms_of_service(request):
+    pass

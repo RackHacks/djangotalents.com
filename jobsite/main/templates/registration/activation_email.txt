@@ -3,8 +3,8 @@ Welcome to Django Talents!
 To activate your account, simply click on the link below or paste into the url field on your favorite browser:
 {{ site }}{% url registration_activate activation_key %}
 
-By signing up for a `Django Talents` account I acknowledge that I have read and agree to the Terms of Use and Privacy Policy located at the following link:
-<link to the terms of use>
+By signing up for a `Django Talents` account you acknowledge that you have read and agree to the Terms of Use and Privacy Policy located at:
+{{ site }}{% url terms %}
 
 The activation link will only be good for {{ expiration_days }} days, after that you will have to try again from the beginning. When you visit the above page, you'll be able to fill your account and contact information, so employers have a way to possibly hire you.
 
