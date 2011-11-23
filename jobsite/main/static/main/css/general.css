@@ -32,6 +32,34 @@
 .red {
     color:#ba450c;
 }
+.yellow {
+	color: #FEAD20;
+}
+.return {
+	font-size: 12px;
+}
+.return:hover {
+	text-decoration: underline;
+}
+.contact-talent {
+    float:right;
+    background:url(images/submit-bg.gif) 0 0 repeat-x;
+    font-size:11px;
+    color:#293a18;
+    font-weight:bold;
+    text-align:center;
+    width:142px;
+    height:20px;
+    border:none;
+    text-transform:uppercase;
+    cursor:pointer;
+    text-shadow:1px 1px 0 #bee055;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    position:relative;
+    behavior:url(js/PIE.htc);
+}
 form input[type="text"],
 form input[type="password"],
 form select {

@@ -6,17 +6,19 @@
   </header>
   <div class="content">
     <blockquote>
+    	<a class="yellow return" href="{% url talents_by_country profile.country %}">&lt;&lt;&nbsp;All in {{ profile.country }}</a>
         {% if profile.looking_for_a_job != 'N' %}
         <h2 class="red">I am looking for a {{ profile.get_looking_for_a_job_display.lower }} job</h2>
         {% else %}
         <h2 class="red">I am not looking a job</h2>
         {% endif %}
         <h3>{{ profile.bio }}</h3>
+		<input type="button" value="contact this talent" class="contact-talent">
         <div id="social-box">
         {% if profile.github %}
              <div class="social">
                 <a rel="external" target="_blank" href="http://github.com/{{ profile.github }}">
-                   <img src="{{ STATIC_URL }}main/css/images/github.png">
+                   <img title="github" src="{{ STATIC_URL }}main/css/images/github.png">
                 </a>
 				<label class="social-user">{{ profile.github }}</label>
              </div>
@@ -24,7 +26,7 @@
         {% if profile.twitter %}
             <div class="social">
                 <a rel="external" target="_blank" href="http://twitter.com/{{ profile.twitter }}">
-                   <img src="{{ STATIC_URL }}main/css/images/twitter.png">
+                   <img title="twitter" src="{{ STATIC_URL }}main/css/images/twitter.png">
                 </a>
                 <label class="social-user">{{ profile.twitter }}</label>
             </div>
@@ -32,57 +34,57 @@
         {% if profile.facebook %}
              <div class="social">
                  <a rel="external" target="_blank" href="http://facebook.com/{{ profile.facebook }}">
-                     <img src="{{ STATIC_URL }}main/css/images/facebook.png">
+                     <img title="facebook" src="{{ STATIC_URL }}main/css/images/facebook.png">
                  </a>
                 <label class="social-user">{{ profile.facebook }}</label>
              </div>
         {% endif %}
         {% if profile.gtalk %}
              <div class="social">
-                  <img src="{{ STATIC_URL }}main/css/images/gtalk.png">
+                  <img title="gtalk" src="{{ STATIC_URL }}main/css/images/gtalk.png">
 				  <label class="social-user">{{ profile.gtalk }}</label>
              </div>
         {% endif %}
         {% if profile.skype %}
             <div class="social">
-                <img src="{{ STATIC_URL }}main/css/images/skype.png">
+                <img title="skype" src="{{ STATIC_URL }}main/css/images/skype.png">
 				<label class="social-user">{{ profile.skype }}</label>
             </div>
         {% endif %}
         {% if profile.msn %}
             <div class="social">
-                 <img src="{{ STATIC_URL }}main/css/images/msn.png">
+                 <img title="msn" src="{{ STATIC_URL }}main/css/images/msn.png">
 				 <label class="social-user">{{ profile.msn }}</label>
             </div>
         {% endif %}
         {% if profile.yahoo %}
             <div class="social">
-                <img src="{{ STATIC_URL }}main/css/images/yahoo.png">
+                <img title="yahoo" src="{{ STATIC_URL }}main/css/images/yahoo.png">
 				<label class="social-user">{{ profile.yahoo }}</label>
             </div>
         {% endif %}
         {% if profile.aim %}
              <div class="social">
-                 <img src="{{ STATIC_URL }}main/css/images/aim.png">
+                 <img title="aim" src="{{ STATIC_URL }}main/css/images/aim.png">
 				 <label class="social-user">{{ profile.aim }}</label>
               </div>
         {% endif %}
         {% if profile.jabber %}
              <div class="social">
-                  <img src="{{ STATIC_URL }}main/css/images/jabber.png">
+                  <img title="jabber" src="{{ STATIC_URL }}main/css/images/jabber.png">
 				  <label class="social-user">{{ profile.jabber }}</label>
              </div>
         {% endif %}
         {% if profile.irc %}
              <div class="social">
-                 <img src="{{ STATIC_URL }}main/css/images/irc.png">
+                 <img title="irc" src="{{ STATIC_URL }}main/css/images/irc.png">
 				 <label class="social-user">{{ profile.irc }}</label>
             </div>
         {% endif %}
         {% if profile.website %}
              <div class="social">
                  <a rel="external" target="_blank" href="{{ profile.website }}">
-                     <img src="{{ STATIC_URL }}main/css/images/website.png">
+                     <img title="website" src="{{ STATIC_URL }}main/css/images/website.png">
 					 <label class="social-user">{{ profile.website }}</label>
                 </a>
             </div>
@@ -90,7 +92,7 @@
         {% if profile.blog %}
             <div class="social">
                  <a rel="external" target="_blank" href="{{ profile.blog }}">
-                    <img src="{{ STATIC_URL }}main/css/images/blog.png">
+                    <img title="blog" src="{{ STATIC_URL }}main/css/images/blog.png">
 					<label class="social-user">{{ profile.blog }}</label>
                 </a>
             </div>
