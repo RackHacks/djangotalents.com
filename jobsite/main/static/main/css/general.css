@@ -33,16 +33,15 @@
     color:#ba450c;
 }
 .yellow {
-	color: #FEAD20;
+    color: #FEAD20;
 }
 .return {
-	font-size: 12px;
+    font-size: 12px;
 }
 .return:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
-.contact-talent {
-    float:right;
+.contact-talent,form input[type="submit"] {
     background:url(images/submit-bg.gif) 0 0 repeat-x;
     font-size:11px;
     color:#293a18;
@@ -59,6 +58,13 @@
     -webkit-border-radius:3px;
     position:relative;
     behavior:url(js/PIE.htc);
+    margin-bottom: 10px;
+}
+form input[type="submit"] {
+    width:72px;
+}
+.contact-talent {
+   float: right;
 }
 form input[type="text"],
 form input[type="password"],

@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 from registration.backends import get_backend
 from countries.models import Country
 
-from main.forms import ContactForm, UserForm, SignupForm
+from main.forms import ContactForm, UserForm, SignupForm, ContactUserForm
 from main.models import UserProfile
 
 
@@ -95,6 +95,27 @@ def talent(request, username):
     profile = get_object_or_404(UserProfile, user__username=username)
     return render_to_response('talent.html', RequestContext(request, {
         'profile': profile,
+    }))
+
+def talent_contact(request, username):
+    profile = get_object_or_404(UserProfile, user__username=username)
+    form = ContactUserForm()
+    success = False
+    if request.method == 'POST':
+        form = ContactUserForm(request.POST)
+        if form.is_valid():
+            send_mail(
+                form.cleaned_data['subject'],
+                form.cleaned_data['message'],
+                'user@domain.com',
+                [profile.user.email],
+            )
+            success = True
+            form = ContactUserForm()
+    return render_to_response('talent_contact.html', RequestContext(request, {
+        'profile': profile,
+        'form': form,
+        'success': success,
     }))
 
 def terms_of_service(request):
