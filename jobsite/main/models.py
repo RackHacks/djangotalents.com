@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models import Count
 from countries.models import Country
 
 JOB_CHOICES = (
@@ -57,3 +58,6 @@ def get_profile(user):
         user=user,
     )
     return profile
+
+def get_non_empty_countries():
+    return Country.objects.annotate(users_count=Count('users')).filter(users_count__gt=0)
