@@ -6,7 +6,8 @@ from registration.backends import get_backend
 from countries.models import Country
 
 from main.forms import ContactForm, UserForm, SignupForm, ContactUserForm
-from main.models import UserProfile
+from main.models import UserProfile, get_non_empty_countries
+
 
 
 def index(request):
@@ -77,8 +78,7 @@ def seekers(request):
     return render_to_response('seekers.html', RequestContext(request))
 
 def talents(request):
-    code_countries = [p.country.numcode for p in UserProfile.objects.all()]
-    countries = Country.objects.filter(numcode__in=code_countries)
+    countries = get_non_empty_countries
     return render_to_response('talents.html', RequestContext(request, {
         'countries': countries,
     }))
