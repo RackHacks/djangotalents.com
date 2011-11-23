@@ -11,3 +11,7 @@ urlpatterns = patterns('main.views',
     url(r'^talent/?$', 'talent', name='talent'),
     url(r'^terms_of_service/$', 'terms_of_service', name='terms'),
 )
+
+urlpatterns += patterns('',
+    url(r'^captcha/', include('captcha.urls')),
+)

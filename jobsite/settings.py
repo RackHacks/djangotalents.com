@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'main',
     'countries',
     'registration',
+    'captcha',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -150,6 +151,8 @@ LOGGING = {
         },
     }
 }
+
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_arcs',)
 
 DEFAULT_FROM_EMAIL = 'noreply@djangotalents.com'
 

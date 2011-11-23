@@ -2,6 +2,7 @@ from django import forms
 from django.forms import Select
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from captcha.fields import CaptchaField
 from main.models import UserProfile
 
 
@@ -16,6 +17,7 @@ class UserForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
 class SignupForm(forms.ModelForm):
+    captcha = CaptchaField()
     class Meta:
         model = UserProfile
-        fields = ('country',)
+        fields = ('country', 'captcha',)
