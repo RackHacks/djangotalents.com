@@ -73,15 +73,18 @@ def signup(request, backend, success_url=None, extra_context=None):
 
 def login(request):
     if request.user.is_authenticated():
-        return HttpResponseRedirect(reverse('talent'))
+        return HttpResponseRedirect(reverse('talents'))
 
     if request.method == 'POST':
         auth_form = AuthenticationForm(None, request.POST)
         if auth_form.is_valid():
             auth_login(request, auth_form.get_user())
-            return HttpResponseRedirect(reverse('index'))
 
-    return render_to_response('index.html', RequestContext(request))
+    return HttpResponseRedirect(reverse('index'))
+
+def logout(request):
+    auth_logout(request)
+    return HttpResponseRedirect(reverse('index'))
 
 def seekers(request):
     return render_to_response('seekers.html', RequestContext(request))

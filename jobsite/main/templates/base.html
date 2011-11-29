@@ -33,7 +33,9 @@
             {% comment %}
             <li><a href="{% url seekers %}">Talent Seekers</a></li>
             {% endcomment %}
+            {% if user.is_anonymous %}
             <li><a href="{% url signup %}">Signup</a></li>
+            {% endif %}
             <li><a href="{% url contact %}">Contact</a></li>
             <li><a href="{% url about %}">About us</a></li>
             {% endblock menu %}
@@ -49,17 +51,25 @@
           <aside class="grid_7">
             {% block content %}
             {% block left-menu %}
-            <label>Welcome, user</label>
             <div class="indent">
             <div class="box">
                 <ul class="menu">
-                <li><a href="index.html">Home</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url talent user %}">Welcome {{ user }}</a></li>
+                {% endif %}
+                <li><a href="{% url index %}">Home</a></li>
+                {% comment %}
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Other</a></li>
                 <li><a href="#">Another</a></li>
+                {% endcomment %}
+                {% if user.is_authenticated %}
+                <li><a href="{% url logout %}">Logout</a></li>
+                {% endif %}
               </ul>
             </div>
             {% block login_form %}
+            {% if user.is_anonymous %}
             <div class="box1">
                 <h3>Login Form</h3>
               <form action="{% url login %}" method="post" id="login-form" class="login-form">
@@ -73,8 +83,10 @@
                   {% endfor %}
                   <div class="field"><label class="alt">Remember me</label><input type="checkbox"></div>
                   <ul>
+                    {% comment %}
                     <li><a href="#">Forgot your password?</a></li>
                     <li><a href="#">Forgot your username?</a></li>
+                    {% endcomment %}
                     <li><a href="{% url signup %}">Create an account.</a></li>
                   </ul>
                   <div class="wrapper">
@@ -83,6 +95,7 @@
                 </fieldset>
               </form>
             </div>
+            {% endif %}
             {% endblock login_form %}
             {% comment %}
             <div class="box1">
