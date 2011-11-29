@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.core.context_processors import csrf
 from registration.backends import get_backend
 from countries.models import Country
-from main.forms import ContactForm, UserForm, SignupForm, ContactUserForm
+from main.forms import ContactForm, UserForm, SignupForm
 from main.models import UserProfile, get_non_empty_countries
 
 
