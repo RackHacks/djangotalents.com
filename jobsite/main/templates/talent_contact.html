@@ -1,8 +1,10 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 {% block right-content %}
 <article>
   <header>
-    {% block content-title %} <h2> {{ profile.user.first_name }} {{ profile.user.last_name }} - {{ profile.location }} </h2>{% endblock content-title%}
+    {% block content-title %}
+        <h2> {{ profile.get_display }} - {{ profile.location }}</h2>
+    {% endblock content-title%}
   </header>
   <div class="content">
     <blockquote>
@@ -15,7 +17,7 @@
                 <label>{{ field.label }}:</label>{{ field.errors }}<br />
                 {{ field }}<br />
                 {% endfor %}
-                <input type="submit" value="Send" name="send-contact-form" />
+                <input type="submit" value="Send" />
             </form>
         </blockquote>
   </div>
