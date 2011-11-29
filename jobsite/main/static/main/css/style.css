@@ -550,11 +550,11 @@ input, select, textarea {
 		.login-form input[type=submit] {
 			float:right;
 			background-image: -webkit-gradient(linear, left top, left bottom, from(#d4f070), to(#5e9304)); /* Saf4+, Chrome */
-            background-image: -webkit-linear-gradient(top, #d4f070, #5e9304); /* Chrome 10+, Saf5.1+ */
-            background-image: -moz-linear-gradient(top, #d4f070, #5e9304); /* FF3.6 */
-            background-image: -ms-linear-gradient(top, #d4f070, #5e9304); /* IE10 */
-            background-image: -o-linear-gradient(top, #d4f070, #5e9304); /* Opera 11.10+ */
-            background-image: linear-gradient(top, #d4f070, #5e9304);
+			background-image: -webkit-linear-gradient(top, #d4f070, #5e9304); /* Chrome 10+, Saf5.1+ */
+			background-image: -moz-linear-gradient(top, #d4f070, #5e9304); /* FF3.6 */
+			background-image: -ms-linear-gradient(top, #d4f070, #5e9304); /* IE10 */
+			background-image: -o-linear-gradient(top, #d4f070, #5e9304); /* Opera 11.10+ */
+			background-image: linear-gradient(top, #d4f070, #5e9304);
 			font-size:11px;
 			color:#293a18;
 			font-weight:bold;
@@ -605,11 +605,11 @@ input, select, textarea {
 	.poll-form input[type=submit] {
 			float:right;
 			background-image: -webkit-gradient(linear, left top, left bottom, from(#d4f070), to(#5e9304)); /* Saf4+, Chrome */
-            background-image: -webkit-linear-gradient(top, #d4f070, #5e9304); /* Chrome 10+, Saf5.1+ */
-            background-image: -moz-linear-gradient(top, #d4f070, #5e9304); /* FF3.6 */
-            background-image: -ms-linear-gradient(top, #d4f070, #5e9304); /* IE10 */
-            background-image: -o-linear-gradient(top, #d4f070, #5e9304); /* Opera 11.10+ */
-            background-image: linear-gradient(top, #d4f070, #5e9304);
+			background-image: -webkit-linear-gradient(top, #d4f070, #5e9304); /* Chrome 10+, Saf5.1+ */
+			background-image: -moz-linear-gradient(top, #d4f070, #5e9304); /* FF3.6 */
+			background-image: -ms-linear-gradient(top, #d4f070, #5e9304); /* IE10 */
+			background-image: -o-linear-gradient(top, #d4f070, #5e9304); /* Opera 11.10+ */
+			background-image: linear-gradient(top, #d4f070, #5e9304);
 			font-size:11px;
 			color:#293a18;
 			font-weight:bold;
