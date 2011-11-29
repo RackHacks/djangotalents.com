@@ -14,9 +14,9 @@ class ContactForm(forms.Form):
 
     def send(self, recipient='djangotalents@codenga.com'):
         return send_mail(
-            form.cleaned_data['subject'],
-            form.cleaned_data['message'],
-            form.cleaned_data['sender'],
+            self.cleaned_data['subject'],
+            self.cleaned_data['message'],
+            self.cleaned_data['sender'],
             [recipient],
         )
 
