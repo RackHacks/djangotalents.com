@@ -83,8 +83,8 @@ def talents(request):
         'countries': countries,
     }))
 
-def talents_by_country(request, country):
-    country = get_object_or_404(Country, name=country.upper)
+def talents_by_country(request, iso):
+    country = get_object_or_404(Country, iso__iexact=iso)
     profiles = country.users.all()
     return render_to_response('talents_by_country.html', RequestContext(request, {
         'profiles': profiles,

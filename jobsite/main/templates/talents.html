@@ -6,9 +6,9 @@
   </header>
   <div class="content">
     <blockquote>
-        {% for c in countries %}
-        <a class="underline" href="{% url talents_by_country c.name.lower %}">
-            {{ c }} ({{ c.users.all.count }})
+        {% for country in countries %}
+        <a class="underline" href="{% url talents_by_country country.iso.lower %}">
+            {{ country }} ({{ country.users.all.count }})
           </a><br />
         {% endfor %}
     </blockquote>

@@ -38,6 +38,10 @@ class UserProfile(models.Model):
         return self.get_full_name()
 
     @property
+    def username(self):
+        return self.user.username
+
+    @property
     def first_name(self):
         return self.user.first_name
 
@@ -47,6 +51,10 @@ class UserProfile(models.Model):
 
     def get_full_name(self):
         return self.user.get_full_name()
+
+    def get_display(self):
+        full_name = self.user.get_full_name()
+        return full_name if full_name else self.username
 
 class Link(models.Model):
     user = models.ForeignKey(UserProfile, related_name='portfolio')

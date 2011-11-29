@@ -9,9 +9,9 @@ urlpatterns = patterns('main.views',
         name='signup'),
     url(r'^seekers/?$', 'seekers', name='seekers'),
     url(r'^talents/?$', 'talents', name='talents'),
-    url(r'^talents/(?P<country>[\w\-\ ]+)/?$', 'talents_by_country', name='talents_by_country'),
-    url(r'^talent/(?P<username>[\w\-\ ]+)/?$', 'talent', name='talent'),
-    url(r'^talent/(?P<username>[\w\-\ ]+)/contact/?$', 'talent_contact', name='talent_contact'),
+    url(r'^talents/(?P<iso>\w{2})/?$', 'talents_by_country', name='talents_by_country'),
+    url(r'^talent/(?P<username>[\w.@+-]+)/?$', 'talent', name='talent'),
+    url(r'^talent/(?P<username>[\w.@+-]+)/contact/?$', 'talent_contact', name='talent_contact'),
     url(r'^terms_of_service/$', 'terms_of_service', name='terms'),
 )
 

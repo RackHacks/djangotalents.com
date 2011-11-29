@@ -2,18 +2,16 @@
 {% block right-content %}
 <article>
   <header>
-    {% block content-title %} <h2> {{ profile.user.first_name }} {{ profile.user.last_name }} - {{ profile.location }} </h2>{% endblock content-title%}
+    {% block content-title %}
+        <h2>{{ profile.get_display }} - {{ profile.location }}</h2>
+    {% endblock content-title%}
   </header>
   <div class="content">
     <blockquote>
         <a class="yellow return" href="{% url talents_by_country profile.country %}">&lt;&lt;&nbsp;All in {{ profile.country }}</a>
-        {% if profile.looking_for_a_job != 'N' %}
-        <h2 class="red">I am looking for a {{ profile.get_looking_for_a_job_display.lower }} job</h2>
-        {% else %}
-        <h2 class="red">I am not looking a job</h2>
-        {% endif %}
+        <h2 class="red">Am I looking for a job? {{ profile.get_looking_for_a_job_display }}</h2>
         <h3>{{ profile.bio }}</h3>
-        <a href="{% url talent_contact profile.user.username%}">
+        <a href="{% url talent_contact profile.user.username %}">
             <input type="button" value="contact this talent" class="contact-talent"><br />
         </a>
         <div id="social-box">

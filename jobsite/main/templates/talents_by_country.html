@@ -2,15 +2,19 @@
 {% block right-content %}
 <article>
   <header>
-   {% block content-title %} <h2> Talented people in {{ country }} </h2>{% endblock content-title%}
+   {% block content-title %}
+       <h2>Talented people in {{ country }}</h2>
+   {% endblock content-title %}
   </header>
   <div class="content">
     <blockquote>
         <a class="yellow return" href="{% url talents %}">&lt;&lt;&nbsp;All countries</al>
         {% for profile in profiles %}
             <div class="profile-box">
-            <a href="{% url talent profile.user.username %}"><h3>{{ profile.user.first_name }} {{ profile.user.last_name }}</h3></a>
-            {{ profile.bio|truncatewords_html:20}}
+            <a href="{% url talent profile.user.username %}">
+                <h3>{{ profile.get_display }}</h3>
+            </a>
+            {{ profile.bio|truncatewords_html:30 }}
             </div>
         {% endfor %}
     </blockquote>
