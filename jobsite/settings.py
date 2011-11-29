@@ -129,6 +129,19 @@ INSTALLED_APPS = (
     'captcha',
 )
 
+# A tuple of callables that are used to populate the context in RequestContext.
+# These callables take a request object as their argument and return a
+# dictionary of items to be merged into the context.
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.request",
+    "main.context_processors.login_form",
+)
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.

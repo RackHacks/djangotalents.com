@@ -1,6 +1,11 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.core.context_processors import csrf
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import (authenticate, login as auth_login,
+                                 logout as auth_logout)
+from django.core.urlresolvers import reverse
 from registration.backends import get_backend
 from countries.models import Country
 from main.forms import ContactForm, UserForm, SignupForm
@@ -65,6 +70,21 @@ def signup(request, backend, success_url=None, extra_context=None):
             'signup_form': signup_form
         },
         context_instance=context)
+
+def login(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect(reverse('talents'))
+
+    if request.method == 'POST':
+        auth_form = AuthenticationForm(None, request.POST)
+        if auth_form.is_valid():
+            auth_login(request, auth_form.get_user())
+
+    return HttpResponseRedirect(reverse('index'))
+
+def logout(request):
+    auth_logout(request)
+    return HttpResponseRedirect(reverse('index'))
 
 def seekers(request):
     return render_to_response('seekers.html', RequestContext(request))
