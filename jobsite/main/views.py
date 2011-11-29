@@ -1,13 +1,10 @@
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.core.context_processors import csrf
-from django.core.mail import send_mail
 from registration.backends import get_backend
 from countries.models import Country
-
 from main.forms import ContactForm, UserForm, SignupForm, ContactUserForm
 from main.models import UserProfile, get_non_empty_countries
-
 
 
 def index(request):
@@ -22,12 +19,7 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            send_mail(
-                form.cleaned_data['subject'],
-                form.cleaned_data['message'],
-                form.cleaned_data['sender'],
-                ['djangotalents@codenga.com'],
-            )
+            form.send()
             success = True
             form = ContactForm()
     return render_to_response('contact.html', RequestContext(request, {
@@ -102,14 +94,9 @@ def talent_contact(request, username):
     form = ContactUserForm()
     success = False
     if request.method == 'POST':
-        form = ContactUserForm(request.POST)
+        form = ContactForm(request.POST)
         if form.is_valid():
-            send_mail(
-                form.cleaned_data['subject'],
-                form.cleaned_data['message'],
-                'user@domain.com',
-                [profile.user.email],
-            )
+            form.send(recipient=profile.user.email)
             success = True
             form = ContactUserForm()
     return render_to_response('talent_contact.html', RequestContext(request, {

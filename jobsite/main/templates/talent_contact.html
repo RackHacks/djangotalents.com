@@ -8,7 +8,7 @@
     <blockquote>
     	<a class="yellow return" href="{% url talent profile.user.username %}">&lt;&lt;&nbsp;Back to profile</a>
             {% if success %}
-            <h4  class="alert">I received an email, you will have a response in a few hours, thanks for contact me!</h4>
+            <h4  class="alert">I have received an email, you will have a response in a few hours. Thanks for contact me!</h4>
             {% endif %}
             <form action="{% url talent_contact profile.user.username %}" method="post">{% csrf_token %}
                 {% for field in form %}
