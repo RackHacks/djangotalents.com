@@ -12,8 +12,10 @@
         {% else %}
         <h2 class="red">I am not looking a job</h2>
         {% endif %}
-        <input type="button" value="contact this talent" class="contact-talent">
         <h3>{{ profile.bio }}</h3>
+        <a href="{% url talent_contact profile.user.username%}">
+            <input type="button" value="contact this talent" class="contact-talent"><br />
+        </a>
         <div id="social-box">
         {% if profile.github %}
              <div class="social">

@@ -11,6 +11,10 @@ class ContactForm(forms.Form):
     sender = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea, max_length=1000)
 
+class ContactUserForm(forms.Form):
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea, max_length=1000)
+
 class UserForm(UserCreationForm):
     class Meta:
         model = User

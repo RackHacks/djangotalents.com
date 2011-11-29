@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block right-content %}
+<article>
+  <header>
+    {% block content-title %} <h2> {{ profile.user.first_name }} {{ profile.user.last_name }} - {{ profile.location }} </h2>{% endblock content-title%}
+  </header>
+  <div class="content">
+    <blockquote>
+    	<a class="yellow return" href="{% url talent profile.user.username %}">&lt;&lt;&nbsp;Back to profile</a>
+            {% if success %}
+            <h4  class="alert">I received an email, you will have a response in a few hours, thanks for contact me!</h4>
+            {% endif %}
+            <form action="{% url talent_contact profile.user.username %}" method="post">{% csrf_token %}
+                {% for field in form %}
+                <label>{{ field.label }}:</label>{{ field.errors }}<br />
+                {{ field }}<br />
+                {% endfor %}
+                <input type="submit" value="Send" name="send-contact-form" />
+            </form>
+        </blockquote>
+  </div>
+</article>
+{% endblock right-content %}
