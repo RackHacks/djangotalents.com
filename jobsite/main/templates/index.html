@@ -1,145 +1,52 @@
 {% extends 'base.html' %}
-{% block body %}
-<div class="header-wrap">
-    <header>
-        {% block header %}
-        <div class="container_24">
-        <h1><span></span>Businex</h1>
-        <div class="slogan"><img src="{{ STATIC_URL }}main/css/images/slogan.png" alt=""></div>
-        <nav>
-            <ul>
-            {% block menu %}
-            <li><a href="{% url index %}">Home</a></li>
-            <li><a href="{% url talents %}">Talents</a></li>
-            <li><a href="{% url seekers %}">Talent Seekers</a></li>
-            <li><a href="{% url signup %}">Sign up</a></li>
-            <li><a href="{% url contact %}">Contact</a></li>
-            <li><a href="{% url about %}">About us</a></li>
-            {% endblock menu %}
-          </ul>
-        </nav>
+{% block right-content %}
+<article>
+  <header>
+    <h2>{% block content-title %}Human talent is the most important!{% endblock content-title %}</h2>
+  </header>
+  <div class="content">
+    <blockquote>
+        Human talent is the most important for the functioning of any organization.
+        We think that if there is no human capital capable of innovation and learning, businesses fail.
+        Employees of companies today need many more skills and talents than before, 
+        and to compete they have to have the highest skills possible.<br /><br />
+        <h4>In Django Talents are the best programmers in Django, the most powerful framework to develop web aplications!</h4>
+    </blockquote>
+  </div>
+</article>
+{% comment %}
+<article>
+  <div class="container_24">
+    <div class="grid_8 alpha">
+      <div class="box2">
+        <h3>Latest News</h3>
+        <ul class="list1">
+          <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</a></li>
+          <li><a href="#">Nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></li>
+          <li><a href="#">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</a></li>
+          <li><a href="#">Suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></li>
+        </ul>
       </div>
-    {% endblock header %}
-    </header>
-  </div>
-  <section id="content">
-    <div class="container_24">
-        <div class="wrapper">
-          <aside class="grid_7">
-            {% block content %}
-            {% block left-menu %}
-            <label>Welcome, user</label>
-            <div class="indent">
-            <div class="box">
-                <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Other</a></li>
-                <li><a href="#">Another</a></li>
-              </ul>
-            </div>
-            <div class="box1">
-                <h3>Login Form</h3>
-              <form action="" id="login-form" class="login-form">
-                <fieldset>
-                    <div class="field"><label>Username</label><input type="text"></div>
-                  <div class="field"><label>Password</label><input type="password"></div>
-                  <div class="field"><label class="alt">Remember me</label><input type="checkbox"></div>
-                  <ul>
-                    <li><a href="#">Forgot your password?</a></li>
-                    <li><a href="#">Forgot your username?</a></li>
-                    <li><a href="#">Create an account.</a></li>
-                  </ul>
-                  <div class="wrapper">
-                    <input type="submit" value="Login">
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-            <div class="box1">
-                <h3>Our Poll</h3>
-              <form action="" id="poll-form" class="poll-form">
-                <fieldset>
-                    <h6>Joomla! is used for?</h6>
-                    <ul>
-                    <li><input type="radio" name="radio" id="radio"><label for="radio">Community Sites</label></li>
-                    <li><input type="radio" name="radio" id="radio1"><label for="radio1">Public Brand Sites</label></li>
-                    <li><input type="radio" name="radio" id="radio2"><label for="radio2">eCommerce</label></li>
-                    <li><input type="radio" name="radio" id="radio3"><label for="radio3">Blogs</label></li>
-                    <li><input type="radio" name="radio" id="radio4"><label for="radio4">Intranets</label></li>
-                  </ul>
-                  <div class="wrapper">
-                    <input type="submit" value="Results"><input type="submit" value="Vote">
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        {% endblock left-menu %}
-        </aside>
-          <div class="grid_17">
-            <div class="inside">
-            {% block right-content %}
-            <article>
-              <header>
-                {% block content-title %}<h2> Human talent is the most important! </h2>{% endblock content-title %}
-              </header>
-              <div class="content">
-                <blockquote>
-                    Human talent is the most important for the functioning of any organization.
-                    We think that if there is no human capital capable of innovation and learning, businesses fail.
-                    Employees of companies today need many more skills and talents than before, 
-                    and to compete they have to have the highest skills possible.<br /><br />
-                    <h4>In Django Talents are the best programmers in Django, the most powerfull framework to develop web aplications!</h4>
-                </blockquote>
-              </div>
-            </article>
-            <article>
-              <div class="container_24">
-                <div class="grid_8 alpha">
-                  <div class="box2">
-                    <h3>Latest News</h3>
-                    <ul class="list1">
-                      <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</a></li>
-                      <li><a href="#">Nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</a></li>
-                      <li><a href="#">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</a></li>
-                      <li><a href="#">Suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="grid_8 omega">
-                  <div class="box2">
-                    <h3>Lead Story</h3>
-                    <p><img src="{{ STATIC_URL }}main/css/images/1page-img1.jpg" alt=""></p>
-                    <h5>Lorem ipsum dolor sit amet, consectetuer</h5>
-                    <p>adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article>
-              <header class="alt">
-                <h2>We know how to help you!</h2>
-              </header>
-              <div class="content">
-                <h4>
-                Want to succeed in your project? is simple! You need the best tools and the best programmers for it...You need Django Talents programmers!
-                </h4>
-              </div>
-            </article>
-          </div>
-        </div>
-        {% endblock right-content %}
-        {% endblock content %}
-        </div>
     </div>
-  </section>
-  <div class="footer-wrap">
-    <footer class="container_24">
-        {% block footer %}
-        Copyright &copy; 2011 djangotalents.com<br />
-        Powered by <a href="http://www.codenga.com" target="_blank" rel="external">Codenga</a>
-        {% endblock footer %}
-    </footer>
+    <div class="grid_8 omega">
+      <div class="box2">
+        <h3>Lead Story</h3>
+        <p><img src="{{ STATIC_URL }}main/css/images/1page-img1.jpg" alt=""></p>
+        <h5>Lorem ipsum dolor sit amet, consectetuer</h5>
+        <p>adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+      </div>
+    </div>
   </div>
- {% endblock body %}
+</article>
+{% endcomment %}
+<article>
+  <header class="alt">
+    <h2>We know how to help you!</h2>
+  </header>
+  <div class="content">
+    <h4>
+    Want to succeed in your project? is simple! You need the best tools and the best programmers for it...You need Django Talents programmers!
+    </h4>
+  </div>
+</article>
+{% endblock right-content %}

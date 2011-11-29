@@ -1,21 +1,122 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{% block title %}Django Talents{% endblock title %}</title> 
-        {% block css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}main/css/grid.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}main/css/reset.css" />
-        <!--[if gt IE 7]><!-->
-        <link rel="stylesheet" href="{{ STATIC_URL }}main/css/style.css"/>
-        <!--<![endif]-->
-        <!--[if lt IE 8]><link rel=stylesheet href="css/ie.css"><![endif]-->
-        <link rel="stylesheet" href="{{ STATIC_URL }}main/css/general.css"/>
-        {% endblock css %}
-        {% block javascript %}
-        <!--[if lt IE 9]>
-            <script type="text/javascript" src="js/html5.js"></script>
-        <![endif]-->
-        {% endblock javascript %}
-    </head>
-    <body>{% block body %}{% endblock body %}</body>
+<head>
+    <title>{% block title %}Django Talents{% endblock title %}</title> 
+    {% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}main/css/grid.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}main/css/reset.css" />
+    <!--[if gt IE 7]><!-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}main/css/style.css"/>
+    <!--<![endif]-->
+    <!--[if lt IE 8]><link rel=stylesheet href="css/ie.css"><![endif]-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}main/css/general.css"/>
+    {% endblock css %}
+    {% block javascript %}
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+    {% endblock javascript %}
+</head>
+<body>
+{% block body %}
+  <div class="header-wrap">
+    <header>
+        {% block header %}
+      <div class="container_24">
+        <h1><span></span>Django Talents</h1>
+        <div class="slogan"><img src="{{ STATIC_URL }}main/css/images/slogan.png" alt=""></div>
+        <nav>
+            <ul>
+            {% block menu %}
+            <li><a href="{% url index %}">Home</a></li>
+            <li><a href="{% url talents %}">Talents</a></li>
+            {% comment %}
+            <li><a href="{% url seekers %}">Talent Seekers</a></li>
+            {% endcomment %}
+            <li><a href="{% url signup %}">Signup</a></li>
+            <li><a href="{% url contact %}">Contact</a></li>
+            <li><a href="{% url about %}">About us</a></li>
+            {% endblock menu %}
+          </ul>
+        </nav>
+      </div>
+    {% endblock header %}
+    </header>
+  </div>
+  <section id="content">
+    <div class="container_24">
+        <div class="wrapper">
+          <aside class="grid_7">
+            {% block content %}
+            {% block left-menu %}
+            <label>Welcome, user</label>
+            <div class="indent">
+            <div class="box">
+                <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Other</a></li>
+                <li><a href="#">Another</a></li>
+              </ul>
+            </div>
+            <div class="box1">
+                <h3>Login Form</h3>
+              <form action="" id="login-form" class="login-form">
+                <fieldset>
+                    <div class="field"><label>Username</label><input type="text"></div>
+                  <div class="field"><label>Password</label><input type="password"></div>
+                  <div class="field"><label class="alt">Remember me</label><input type="checkbox"></div>
+                  <ul>
+                    <li><a href="#">Forgot your password?</a></li>
+                    <li><a href="#">Forgot your username?</a></li>
+                    <li><a href="{% url signup %}">Create an account.</a></li>
+                  </ul>
+                  <div class="wrapper">
+                    <input type="submit" value="Login">
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            {% comment %}
+            <div class="box1">
+                <h3>Our Poll</h3>
+              <form action="" id="poll-form" class="poll-form">
+                <fieldset>
+                    <h6>Joomla! is used for?</h6>
+                    <ul>
+                    <li><input type="radio" name="radio" id="radio"><label for="radio">Community Sites</label></li>
+                    <li><input type="radio" name="radio" id="radio1"><label for="radio1">Public Brand Sites</label></li>
+                    <li><input type="radio" name="radio" id="radio2"><label for="radio2">eCommerce</label></li>
+                    <li><input type="radio" name="radio" id="radio3"><label for="radio3">Blogs</label></li>
+                    <li><input type="radio" name="radio" id="radio4"><label for="radio4">Intranets</label></li>
+                  </ul>
+                  <div class="wrapper">
+                    <input type="submit" value="Results"><input type="submit" value="Vote">
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            {% endcomment %}
+          </div>
+        {% endblock left-menu %}
+        </aside>
+          <div class="grid_17">
+            <div class="inside">
+            {% block right-content %}{% endblock right-content %}
+            </div>
+          </div>
+        {% endblock content %}
+        </div>
+    </div>
+  </section>
+  <div class="footer-wrap">
+    <footer class="container_24">
+        {% block footer %}
+        Copyright &copy; 2011 djangotalents.com<br />
+        Powered by <a href="http://www.codenga.com" target="_blank" rel="external">Codenga</a>
+        {% endblock footer %}
+    </footer>
+  </div>
+{% endblock body %}
+</body>
 </html>
