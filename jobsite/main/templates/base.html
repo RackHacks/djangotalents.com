@@ -29,7 +29,7 @@
             <ul>
             {% block menu %}
             <li><a href="{% url index %}">Home</a></li>
-            <li><a href="{% url talent %}">Talent</a></li>
+            <li><a href="{% url talents %}">Talents</a></li>
             {% comment %}
             <li><a href="{% url seekers %}">Talent Seekers</a></li>
             {% endcomment %}
@@ -63,6 +63,7 @@
             <div class="box1">
                 <h3>Login Form</h3>
               <form action="{% url login %}" method="post" id="login-form" class="login-form">
+                {% csrf_token %}
                 <fieldset>
                   {% for field in login_form %}
                     <div class="field">

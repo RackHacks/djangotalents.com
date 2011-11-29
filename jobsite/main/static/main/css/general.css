@@ -1,6 +1,71 @@
 #codenga-logo {
     margin: 10px 0 20px 130px;
 }
+.underline:hover {
+    text-decoration: underline;
+}
+.profile-box {
+    background: url(images/box2-bg.gif) 0 0 repeat-x #2b2d27;
+    padding: 10px 20px 10px 20px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    position: relative;
+    behavior: url(js/PIE.htc);
+    margin: 0 0 21px 0;
+    font-size: 11px;
+    border: 1px solid #44463f;
+    color: #8b9082;
+}
+.social {
+    float: left;
+    width: 270px;
+    padding-bottom: 20px;
+}
+#social-box {
+    width: 540px;
+}
+.social-user {
+    color: #ffffff;
+    font-size: 13px;
+}
+.red {
+    color:#ba450c;
+}
+.yellow {
+    color: #FEAD20;
+}
+.return {
+    font-size: 12px;
+}
+.return:hover {
+    text-decoration: underline;
+}
+.contact-talent,form input[type="submit"] {
+    background:url(images/submit-bg.gif) 0 0 repeat-x;
+    font-size:11px;
+    color:#293a18;
+    font-weight:bold;
+    text-align:center;
+    width:142px;
+    height:20px;
+    border:none;
+    text-transform:uppercase;
+    cursor:pointer;
+    text-shadow:1px 1px 0 #bee055;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    position:relative;
+    behavior:url(js/PIE.htc);
+    margin-bottom: 10px;
+}
+form input[type="submit"] {
+    width:72px;
+}
+.contact-talent {
+   float: right;
+}
 form input[type="text"],
 form input[type="password"],
 form select {
