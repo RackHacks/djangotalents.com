@@ -21,7 +21,7 @@ class UserProfile(models.Model):
     user = models.ForeignKey('auth.User', related_name='+')
     bio = models.TextField()
     looking_for_a_job = models.CharField(max_length=1, choices=JOB_CHOICES)
-    country = models.ForeignKey(Country, related_name='users')
+    country = models.ForeignKey(Country, related_name='users', null=True)
     location = models.CharField(max_length=150)
     github = models.CharField('Github Username', max_length=50, null=True, blank=True)
     facebook = models.CharField('Facebook Username', max_length=50, null=True, blank=True)
