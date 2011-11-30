@@ -142,6 +142,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "main.context_processors.login_form",
 )
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'main.backends.EmailModelBackend',
+)
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
