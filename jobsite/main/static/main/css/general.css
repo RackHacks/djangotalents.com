@@ -102,3 +102,7 @@ form label {
 .center-info {
     text-align:center;
 }
+.welcome-user {
+    float: right;
+    margin-right: 20px;
+}
