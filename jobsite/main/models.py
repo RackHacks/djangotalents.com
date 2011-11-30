@@ -36,6 +36,9 @@ class UserProfile(models.Model):
     blog = models.URLField(null=True, blank=True)
     website = models.URLField(null=True, blank=True)
 
+    class Meta:
+        ordering = ('user__first_name', 'user__last_name', 'user__username',)
+
     def __unicode__(self):
         return self.get_full_name()
 
