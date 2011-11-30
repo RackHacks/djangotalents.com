@@ -13,6 +13,8 @@ JOB_CHOICES = (
 User._meta.get_field('email')._unique = True
 User._meta.get_field('email').null = False
 User._meta.get_field('email').blank = False
+User._meta.get_field('first_name').blank = False
+User._meta.get_field('last_name').blank = False
 
 
 class UserProfile(models.Model):
@@ -21,9 +23,9 @@ class UserProfile(models.Model):
     looking_for_a_job = models.CharField(max_length=1, choices=JOB_CHOICES)
     country = models.ForeignKey(Country, related_name='users')
     location = models.CharField(max_length=150)
-    github = models.CharField(max_length=50, null=True, blank=True)
-    facebook = models.CharField(max_length=50, null=True, blank=True)
-    twitter = models.CharField(max_length=50, null=True, blank=True)
+    github = models.CharField('Github Username', max_length=50, null=True, blank=True)
+    facebook = models.CharField('Facebook Username', max_length=50, null=True, blank=True)
+    twitter = models.CharField('Twitter Username', max_length=50, null=True, blank=True)
     gtalk = models.CharField(max_length=50, null=True, blank=True)
     skype = models.CharField(max_length=50, null=True, blank=True)
     msn = models.EmailField(null=True, blank=True)
