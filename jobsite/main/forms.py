@@ -30,3 +30,13 @@ class SignupForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('country', 'captcha',)
+
+class EditUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name')
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        exclude = ('user',)
