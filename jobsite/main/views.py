@@ -131,7 +131,6 @@ def terms_of_service(request):
 
 @login_required
 def profile(request):
-    success = False
     user_form = EditUserForm(instance=request.user)
     profile_form = UserProfileForm(instance=request.user.get_profile())
     if request.method == 'POST':
@@ -140,9 +139,8 @@ def profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            success = True
+            return redirect('talent', request.user.username)
     return render_to_response('profile.html', {
         'user_form': user_form,
         'profile_form': profile_form,
-        'success': success,
     }, RequestContext(request))
