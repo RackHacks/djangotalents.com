@@ -68,6 +68,7 @@ def get_profile(user):
         user=user,
     )
     return profile
+User.get_profile = get_profile
 
 def get_non_empty_countries():
     return Country.objects.annotate(users_count=Count('users')).filter(users_count__gt=0)

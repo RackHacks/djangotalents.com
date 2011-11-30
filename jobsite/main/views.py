@@ -2,13 +2,14 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.core.context_processors import csrf
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import (authenticate, login as auth_login,
                                  logout as auth_logout)
 from django.core.urlresolvers import reverse
 from registration.backends import get_backend
 from countries.models import Country
-from main.forms import ContactForm, UserForm, SignupForm
+from main.forms import ContactForm, UserForm, SignupForm, EditUserForm, UserProfileForm
 from main.models import UserProfile, get_non_empty_countries
 
 
@@ -127,3 +128,21 @@ def talent_contact(request, username):
 
 def terms_of_service(request):
     pass
+
+@login_required
+def profile(request):
+    success = False
+    user_form = EditUserForm(instance=request.user)
+    profile_form = UserProfileForm(instance=request.user.get_profile())
+    if request.method == 'POST':
+        user_form = EditUserForm(request.POST, instance=request.user)
+        profile_form = UserProfileForm(request.POST, instance=request.user.get_profile())
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            success = True
+    return render_to_response('profile.html', {
+        'user_form': user_form,
+        'profile_form': profile_form,
+        'success': success,
+    }, RequestContext(request))

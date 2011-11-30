@@ -15,6 +15,7 @@ urlpatterns = patterns('main.views',
     url(r'^talent/(?P<username>[\w.@+-]+)/?$', 'talent', name='talent'),
     url(r'^talent/(?P<username>[\w.@+-]+)/contact/?$', 'talent_contact', name='talent_contact'),
     url(r'^terms_of_service/$', 'terms_of_service', name='terms'),
+    url(r'^profile/$', 'profile', name='profile'),
 )
 
 urlpatterns += patterns('',
