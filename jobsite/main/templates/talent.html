@@ -14,6 +14,7 @@
         <a href="{% url talent_contact profile.user.username %}">
             <input type="button" value="contact this talent" class="contact-talent"><br />
         </a>
+        {% if user.is_authenticated %}
         <div id="social-box">
         {% if profile.github %}
              <div class="social">
@@ -98,6 +99,10 @@
             </div>
         {% endif %}
         </div>
+        {% else %}
+            Do you want to see contact information about this user?<br/>
+            Login or <a href="{% url signup %}">Signup</a>
+        {% endif %}
     </blockquote>
   </div>
 </article>
