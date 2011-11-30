@@ -79,6 +79,9 @@ def login(request):
     if request.method == 'POST':
         auth_form = AuthenticationForm(None, request.POST)
         if auth_form.is_valid():
+            if not request.POST.get('remember_me', None):
+                print 1
+                request.session.set_expiry(0)
             auth_login(request, auth_form.get_user())
 
     return HttpResponseRedirect(reverse('index'))
