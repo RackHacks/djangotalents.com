@@ -56,6 +56,9 @@
             {% endif %}
             <li><a href="{% url contact %}">Contact</a></li>
             <li><a href="{% url about %}">About us</a></li>
+            {% if user.is_authenticated %}
+            <li><h4 class="welcome-user">Welcome {{ user }}<h4/></li>
+            {% endif %}
             {% endblock menu %}
           </ul>
         </nav>
@@ -73,8 +76,8 @@
             <div class="box">
                 <ul class="menu">
                 {% if user.is_authenticated %}
-                <li><a href="{% url talent user %}">Welcome {{ user }}</a></li>
-                <li><a href="{% url profile %}">My Profile</a></li>
+                <li><a href="{% url talent user %}">My Profile</a></li>
+                <li><a href="{% url profile %}">Edit Profile</a></li>
                 {% endif %}
                 <li><a href="{% url index %}">Home</a></li>
                 {% comment %}
