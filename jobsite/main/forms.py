@@ -11,6 +11,7 @@ class ContactForm(forms.Form):
     subject = forms.CharField(max_length=100)
     sender = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea, max_length=1000)
+    captcha = CaptchaField()
 
     def send(self, recipient='djangotalents@codenga.com'):
         return send_mail(
