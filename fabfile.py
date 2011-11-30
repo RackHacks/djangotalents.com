@@ -1,6 +1,7 @@
 from fabric.api import *
 
 def dev():
+    return
     env.enviroment = 'dev'
     env.branch = 'dev'
     env.collect_static = False
