@@ -99,3 +99,6 @@ form label {
 .alert {
     color: #FEAD20;
 }
+.center-info {
+    text-align:center;
+}
