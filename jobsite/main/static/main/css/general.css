@@ -111,3 +111,10 @@ form label {
     background:url(images/line2.gif) 0 100% repeat-x;
     font-style: italic;
 }
+.help-text {
+    color: white;
+    float: right;
+    margin-right: 220px;
+    font-size: 12px;
+    font-style: italic;
+}
