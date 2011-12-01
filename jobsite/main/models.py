@@ -35,6 +35,7 @@ class UserProfile(models.Model):
     irc = models.CharField(max_length=150, null=True, blank=True)
     blog = models.URLField(null=True, blank=True)
     website = models.URLField(null=True, blank=True)
+    last_updated = models.DateField(auto_now=True)
 
     class Meta:
         ordering = ('user__first_name', 'user__last_name', 'user__username',)

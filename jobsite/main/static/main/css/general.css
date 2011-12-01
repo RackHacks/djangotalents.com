@@ -59,6 +59,7 @@
     position:relative;
     behavior:url(js/PIE.htc);
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 form input[type="submit"] {
     width:72px;
@@ -105,4 +106,8 @@ form label {
 .welcome-user {
     float: right;
     margin-right: 20px;
+}
+.last-updated-field {
+    background:url(images/line2.gif) 0 100% repeat-x;
+    font-style: italic;
 }
