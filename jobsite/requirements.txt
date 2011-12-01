@@ -3,3 +3,4 @@ PIL==1.1.7
 https://github.com/robhudson/django-countries/zipball/a1b2dd8c7d4cbf3fb252904e70414139e817aeff
 https://bitbucket.org/ubernostrum/django-registration/get/fad7080fe769.zip
 django-simple-captcha==0.3.0
+South==0.7.3
