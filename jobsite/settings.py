@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'countries',
     'registration',
     'captcha',
+    'south',
 )
 
 # A tuple of callables that are used to populate the context in RequestContext.
