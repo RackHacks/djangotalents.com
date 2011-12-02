@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 from registration.backends import get_backend
 from countries.models import Country
 from main.forms import ContactForm, UserForm, SignupForm, EditUserForm, UserProfileForm
-from main.models import UserProfile, get_non_empty_countries
+from main.models import User, UserProfile, get_non_empty_countries
 
 
 def index(request):
@@ -105,9 +105,11 @@ def talents_by_country(request, iso):
     }))
 
 def talent(request, username):
-    profile = get_object_or_404(UserProfile, user__username=username)
+    talent_user = get_object_or_404(User, username=username)
+    profile = talent_user.get_profile
     return render_to_response('talent.html', RequestContext(request, {
         'profile': profile,
+        'talent_user': talent_user,
     }))
 
 def talent_contact(request, username):
