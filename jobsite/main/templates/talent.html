@@ -13,7 +13,7 @@
         <h2 class="red">Am I looking for a job? {{ profile.get_looking_for_a_job_display }}</h2>
         <h3>{{ profile.bio|markdown }}</h3>
         <h5 class="last-updated-field">Last updated {{ profile.last_updated }}</h5>
-        {% if not request.user == talent_user %}
+        {% if not user == profile.user %}
         <a href="{% url talent_contact profile.user.username %}">
             <input type="button" value="contact this talent" class="contact-talent"><br />
         </a>

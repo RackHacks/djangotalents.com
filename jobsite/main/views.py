@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.core.context_processors import csrf
@@ -105,28 +105,29 @@ def talents_by_country(request, iso):
     }))
 
 def talent(request, username):
-    talent_user = get_object_or_404(User, username=username)
-    profile = talent_user.get_profile
+    profile = get_object_or_404(UserProfile, user__username=username)
     return render_to_response('talent.html', RequestContext(request, {
         'profile': profile,
-        'talent_user': talent_user,
     }))
 
 def talent_contact(request, username):
-    profile = get_object_or_404(UserProfile, user__username=username)
-    form = ContactForm()
-    success = False
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.send(recipient=profile.user.email)
-            success = True
-            form = ContactForm()
-    return render_to_response('talent_contact.html', RequestContext(request, {
-        'profile': profile,
-        'form': form,
-        'success': success,
-    }))
+    if request.user.username == username:
+        raise Http404
+    else:
+        profile = get_object_or_404(UserProfile, user__username=username)
+        form = ContactForm()
+        success = False
+        if request.method == 'POST':
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                form.send(recipient=profile.user.email)
+                success = True
+                form = ContactForm()
+        return render_to_response('talent_contact.html', RequestContext(request, {
+            'profile': profile,
+            'form': form,
+            'success': success,
+        }))
 
 def terms_of_service(request):
     pass
