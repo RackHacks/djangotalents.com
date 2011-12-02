@@ -13,6 +13,7 @@
             {% endfor %}
             {% for field in profile_form %}
             <label>{{ field.label }}:</label>{{ field.errors }}<br />
+            <span class="help-text">{{ field.help_text }}</span><br />
             {{ field }}<br />
             {% endfor %}
             <input type="submit" value="Save">

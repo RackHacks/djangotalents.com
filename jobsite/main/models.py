@@ -19,7 +19,7 @@ User._meta.get_field('last_name').blank = False
 
 class UserProfile(models.Model):
     user = models.ForeignKey('auth.User', related_name='+')
-    bio = models.TextField()
+    bio = models.TextField(help_text='Support for Markdown syntax.')
     looking_for_a_job = models.CharField(max_length=1, choices=JOB_CHOICES)
     country = models.ForeignKey(Country, related_name='users', null=True)
     location = models.CharField(max_length=150)

@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.core.context_processors import csrf
@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 from registration.backends import get_backend
 from countries.models import Country
 from main.forms import ContactForm, UserForm, SignupForm, EditUserForm, UserProfileForm
-from main.models import UserProfile, get_non_empty_countries
+from main.models import User, UserProfile, get_non_empty_countries
 
 
 def index(request):
@@ -111,6 +111,8 @@ def talent(request, username):
     }))
 
 def talent_contact(request, username):
+    if request.user.username == username:
+        raise Http404
     profile = get_object_or_404(UserProfile, user__username=username)
     form = ContactForm()
     success = False
