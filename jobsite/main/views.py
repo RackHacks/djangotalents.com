@@ -113,21 +113,20 @@ def talent(request, username):
 def talent_contact(request, username):
     if request.user.username == username:
         raise Http404
-    else:
-        profile = get_object_or_404(UserProfile, user__username=username)
-        form = ContactForm()
-        success = False
-        if request.method == 'POST':
-            form = ContactForm(request.POST)
-            if form.is_valid():
-                form.send(recipient=profile.user.email)
-                success = True
-                form = ContactForm()
-        return render_to_response('talent_contact.html', RequestContext(request, {
-            'profile': profile,
-            'form': form,
-            'success': success,
-        }))
+    profile = get_object_or_404(UserProfile, user__username=username)
+    form = ContactForm()
+    success = False
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.send(recipient=profile.user.email)
+            success = True
+            form = ContactForm()
+    return render_to_response('talent_contact.html', RequestContext(request, {
+        'profile': profile,
+        'form': form,
+        'success': success,
+    }))
 
 def terms_of_service(request):
     pass
