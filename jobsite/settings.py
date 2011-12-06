@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'registration',
     'captcha',
     'south',
+    'simplegravatar'
 )
 
 # A tuple of callables that are used to populate the context in RequestContext.
@@ -202,3 +203,8 @@ try:
     unclebob.take_care_of_my_tests()
 except ImportError:
     pass
+
+SIMPLEGRAVATAR_SIZE = 80
+SIMPLEGRAVATAR_RATING = 'g'
+SIMPLEGRAVATAR_DEFAULT = 'identicon'
+SIMPLEGRAVATAR_SECURE = True

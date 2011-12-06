@@ -5,3 +5,4 @@ https://bitbucket.org/ubernostrum/django-registration/get/fad7080fe769.zip
 django-simple-captcha==0.3.0
 South==0.7.3
 Markdown==2.0.3
+django-simplegravatar==0.2
