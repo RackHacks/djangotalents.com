@@ -138,7 +138,6 @@ form label {
     margin: 5px 10px 10px 0;
 }
 .container-by-country {
-    margin-top: -25px;
-    margin-left: 70px;
+    margin: -25px 0 0 70px;
     text-align: justify;
 }
