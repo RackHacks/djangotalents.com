@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load markup %}
+{% load simplegravatar %}
 {% block right-content %}
 <article>
   <header>
@@ -10,8 +11,11 @@
   <div class="content">
     <blockquote>
         <a class="yellow return" href="{% url talents_by_country profile.country.iso %}">&lt;&lt;&nbsp;All in {{ profile.country }}</a>
-        <h2 class="red">Am I looking for a job? {{ profile.get_looking_for_a_job_display }}</h2>
-        <h3>{{ profile.bio|markdown }}</h3>
+        <div class="bio-gravatar-container">
+            <div class="gravatar-section">{% show_gravatar profile.user.email 120 %}</div>
+            <h2 class="red">Am I looking for a job? {{ profile.get_looking_for_a_job_display }}</h2>
+            <div class="bio-talent">{{ profile.bio|markdown }}</div>
+        </div>
         <h5 class="last-updated-field">Last updated {{ profile.last_updated }}</h5>
         {% if not user == profile.user %}
         <a href="{% url talent_contact profile.user.username %}">

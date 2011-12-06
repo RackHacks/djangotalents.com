@@ -16,6 +16,7 @@
     font-size: 11px;
     border: 1px solid #44463f;
     color: #8b9082;
+    min-height: 73px;
 }
 .social {
     float: left;
@@ -117,4 +118,27 @@ form label {
     margin-right: 220px;
     font-size: 12px;
     font-style: italic;
+}
+.gravatar-section {
+    float: right;
+    margin: 30px 0 5px 15px;
+}
+.bio-talent {
+    font-family: verdana, sans-serif;
+    font-size: 13px;
+    color: #FFFFFF;
+    text-align: justify;
+}
+.bio-gravatar-container {
+    min-height: 150px;
+    height: auto !important;
+}
+.gravatar-by-country {
+    float: left;
+    margin: 5px 10px 10px 0;
+}
+.container-by-country {
+    margin-top: -25px;
+    margin-left: 70px;
+    text-align: justify;
 }
