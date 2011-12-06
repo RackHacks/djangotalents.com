@@ -13,9 +13,9 @@
         {% for profile in profiles %}
             <div class="profile-box">
                 <div class="gravatar-by-country">{% show_gravatar profile.user.email 60%}</div>
-                <a href="{% url talent profile.user.username %}">
-                <h3>{{ profile.get_display }}</h3>
-                </a>
+                    <a href="{% url talent profile.user.username %}">
+                        <h3>{{ profile.get_display }}</h3>
+                    </a>
                 <div class="container-by-country">{{ profile.bio|truncatewords_html:30 }}</div>
             </div>
         {% endfor %}
