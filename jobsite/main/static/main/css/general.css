@@ -141,3 +141,28 @@ form label {
     margin: -25px 0 0 70px;
     text-align: justify;
 }
+.bio-talent ol, .bio-talent ul {
+    margin-left: 20px;
+}
+.bio-talent blockquote {
+    font-style: italic;
+    font-size: 12px;
+}
+.bio-talent h1 {
+    font-size: 17px;
+}
+.bio-talent h2 {
+    font-size: 14px;
+}
+.bio-talent h3 {
+    font-size: 13px;
+}
+.bio-talent h4 {
+    font-size: 11px;
+}
+.bio-talent h5 {
+    font-size: 10px;
+}
+.bio-talent h6 {
+    font-size: 7px;
+}
